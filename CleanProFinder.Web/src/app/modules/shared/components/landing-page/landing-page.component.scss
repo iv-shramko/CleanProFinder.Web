@@ -1,0 +1,77 @@
+  // TODO: use global max-width/height
+.temporary-wrapper {
+  height: 100%;
+  margin-top: 2rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+}
+
+.focus {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titles {
+  margin-top: 5rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-family: 'Chillax-Semibold';
+}
+
+.subtitle {
+  font-size: 3rem;
+  font-family: 'Chillax-Regular';
+}
+
+.login-button {
+  text-decoration: none;
+  color: #fff;
+  height: 2.5rem;
+  width: 7rem;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #1db19f;
+  background-color: #1db19f;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+  padding-top: 3px;
+  font-size: 1.2rem;
+}
+
+.signup-button {
+  text-decoration: none;
+  color: #1db19f;
+  height: 2.5rem;
+  width: 7rem;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #1db19f;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+  padding-top: 3px;
+  font-size: 1.2rem;
+}
+
+.reviews {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.reviews-overview {
+}
+
+.reviews-stats {
+  display: flex;
+  color: #1db19f;
+  gap: 0.5rem;
+}
