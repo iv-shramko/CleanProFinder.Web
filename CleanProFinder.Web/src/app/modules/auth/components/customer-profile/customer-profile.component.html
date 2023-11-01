@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="col">
+          <h1>{{ pageText.title }}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form [formGroup]="profileForm" (submit)="handleFormSubmit()">
+            <labeL>{{ formLabels.name }}</labeL>
+            <input
+              [formControlName]="formFields.firstName"
+              type="text"
+              [placeholder]="pageText.placeholder" />
+            <labeL>{{ formLabels.phoneNumber }}</labeL>
+            <input
+              [formControlName]="formFields.lastName"
+              type="text"
+              [placeholder]="pageText.placeholder" />
+            <labeL>{{ formLabels.website }}</labeL>
+            <input
+              [formControlName]="formFields.phoneNumber"
+              type="text"
+              [placeholder]="pageText.placeholder" />
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <card-design></card-design>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="button-group">
+            <button>{{ pageText.goBackButton }}</button>
+            <button type="submit" [disabled]="!profileForm.valid">
+              {{ pageText.saveChangesButton }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6"></div>
+  </div>
+</div>

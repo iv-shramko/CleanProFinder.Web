@@ -5,3 +5,12 @@
 body {
   background-color: #b0f5eb;
 }
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.25em;
+  > * {
+    flex-grow: 1;
+  }
+}
