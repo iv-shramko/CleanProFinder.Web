@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthApiService } from 'src/app/modules/core/api/auth-api.service';
+import { LoginModel } from 'src/app/modules/core/api/models/login.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  constructor(private authApiService: AuthApiService) { }
 
-  constructor() { }
+  fields = {
+    email: 'email',
+    password: 'password',
+  };
 
-  ngOnInit(): void {
+  form = new FormGroup({
+    email: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required]),
+  });
+
+  handleFormSubmit() {
+    const model = this.getFormValue();
+    this.authApiService.login(model).subscribe();
   }
 
+  private getFormValue(): LoginModel {
+    return {
+      email: this.form.controls['email'].value,
+      password: this.form.controls['password'].value,
+    };
+  }
 }
