@@ -1,0 +1,14 @@
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75em;
+}
+.control {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25em;
+}
+
+.container {
+  padding: 2em;
+}
