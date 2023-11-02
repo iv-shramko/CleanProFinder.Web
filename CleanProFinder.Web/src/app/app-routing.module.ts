@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UnauthorizedPageComponent } from 'src/app/modules/shared/components/unauthorized-page/unauthorized-page.component';
+import { LandingPageComponent } from 'src/app/modules/shared/components/landing-page/landing-page.component';
 
 const APP_ROUTING_URIS = {
   AUTH: 'auth',
@@ -11,7 +11,7 @@ const APP_ROUTING_URIS = {
 const routes: Routes = [
   {
     path: APP_ROUTING_URIS.BASE,
-    component: UnauthorizedPageComponent,
+    component: LandingPageComponent,
   },
   {
     path: APP_ROUTING_URIS.AUTH,

@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomerProfileComponent } from 'src/app/modules/auth/components/customer-profile/customer-profile.component';
 import { LoginComponent } from 'src/app/modules/auth/components/login/login.component';
-import { NotFoundPageComponent } from 'src/app/modules/shared/components/not-found-page/not-found-page.component';
+import { SignupComponent } from 'src/app/modules/auth/components/signup/signup.component';
 
 const AUTH_ROUTING_URIS = {
   LOGIN: 'login',
+  SIGNUP: 'signup',
   BASE: '',
   SERVICE_PROVIDER_PROFILE: 'service-provider',
   CUSTOMER_PROFILE: 'customer',
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: AUTH_ROUTING_URIS.SERVICE_PROVIDER_PROFILE,
     component: ServiceProviderProfileComponent,
+  },
+  {
+    path: AUTH_ROUTING_URIS.SIGNUP,
+    component: SignupComponent,
   },
   {
     path: AUTH_ROUTING_URIS.DISCARD,
