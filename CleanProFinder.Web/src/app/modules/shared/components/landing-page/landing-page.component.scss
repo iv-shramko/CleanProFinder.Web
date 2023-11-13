@@ -1,15 +1,8 @@
-  // TODO: use global max-width/height
-.temporary-wrapper {
-  height: 100%;
-  margin-top: 2rem;
-  margin-left: 15rem;
-  margin-right: 15rem;
-}
-
 header {
   display: flex;
   justify-content: flex-end;
   gap: 3rem;
+  margin-top: 2rem;
 }
 
 .focus {
