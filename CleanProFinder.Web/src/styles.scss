@@ -7,3 +7,15 @@ body {
   font-family: 'GeneralSans-Regular';
   min-height: 100vh;
 }
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5em;
+  > * {
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
+  font-family: 'GeneralSans-Regular';
+  min-height: 100vh;
+}
