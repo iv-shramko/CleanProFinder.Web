@@ -32,8 +32,8 @@ header {
   width: 7rem;
   border-radius: 8px;
   border: 2px solid;
-  border-color: #1db19f;
-  background-color: #1db19f;
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
   font-family: 'GeneralSans-Semibold';
   text-align: center;
   padding-top: 3px;
@@ -42,12 +42,12 @@ header {
 
 .signup-button {
   text-decoration: none;
-  color: #1db19f;
+  color: var(--primary-color);
   height: 2.5rem;
   width: 7rem;
   border-radius: 8px;
   border: 2px solid;
-  border-color: #1db19f;
+  border-color: var(--primary-color);
   font-family: 'GeneralSans-Semibold';
   text-align: center;
   padding-top: 3px;
@@ -65,6 +65,6 @@ header {
 
 .reviews-stats {
   display: flex;
-  color: #1db19f;
+  color: var(--primary-color);
   gap: 0.5rem;
 }
