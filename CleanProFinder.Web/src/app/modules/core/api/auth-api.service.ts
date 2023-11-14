@@ -29,6 +29,7 @@ export class AuthApiService {
   }
 
   login(model: LoginModel): Observable<any> {
+    //get data set token
     return this.httpClient.post<any>(this.uris.login, model);
   }
 
@@ -38,5 +39,10 @@ export class AuthApiService {
 
   createProvider(model: CreateProviderModel): Observable<any> {
     return this.httpClient.post<any>(this.uris.createProvider, model);
+  }
+
+  isAuthenticated() {
+    //check token
+    return true;
   }
 }

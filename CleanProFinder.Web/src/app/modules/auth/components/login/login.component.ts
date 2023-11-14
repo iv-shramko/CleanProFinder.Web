@@ -9,7 +9,7 @@ import { LoginModel } from 'src/app/modules/core/api/models/login.model';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private authApiService: AuthApiService) { }
+  constructor(private authApiService: AuthApiService) {}
 
   fields = {
     email: 'email',
@@ -24,6 +24,7 @@ export class LoginComponent {
   handleFormSubmit() {
     const model = this.getFormValue();
     this.authApiService.login(model).subscribe();
+    //after successful login redirect base on role
   }
 
   private getFormValue(): LoginModel {

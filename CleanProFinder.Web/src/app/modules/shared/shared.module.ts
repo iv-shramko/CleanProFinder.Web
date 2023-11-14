@@ -6,6 +6,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { UnauthorizedPageComponent } from './components/unauthorized-page/unauthorized-page.component';
 import { CardDesignComponent } from './components/card-design/card-design.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     UnauthorizedPageComponent,
     CardDesignComponent,
     LandingPageComponent,
+    HeaderComponent,
   ],
   imports: [CommonModule, SharedRoutingModule],
-  exports: [CardDesignComponent, LandingPageComponent],
+  exports: [CardDesignComponent, LandingPageComponent, HeaderComponent],
 })
-export class SharedModule { }
+export class SharedModule {}
