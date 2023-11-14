@@ -2,10 +2,19 @@
 @import './assets/fonts/chillax.css';
 @import './assets/fonts/general-sans.css';
 
+:root {
+  --background-color: #b0f5eb;
+  --primary-color: #1db19f;
+  --secondary-color: #0e786b;
+}
+
 body {
-  background-color: #b0f5eb;
+  background-color: var(--background-color);
   font-family: 'GeneralSans-Regular';
   min-height: 100vh;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .button-group {
