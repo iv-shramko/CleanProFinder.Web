@@ -7,6 +7,8 @@ import { UnauthorizedPageComponent } from './components/unauthorized-page/unauth
 import { CardDesignComponent } from './components/card-design/card-design.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,14 @@ import { HeaderComponent } from './components/header/header.component';
     CardDesignComponent,
     LandingPageComponent,
     HeaderComponent,
+    RatingComponent,
   ],
   imports: [CommonModule, SharedRoutingModule],
-  exports: [CardDesignComponent, LandingPageComponent, HeaderComponent],
+  exports: [
+    CardDesignComponent,
+    LandingPageComponent,
+    HeaderComponent,
+    RatingComponent,
+  ],
 })
 export class SharedModule {}

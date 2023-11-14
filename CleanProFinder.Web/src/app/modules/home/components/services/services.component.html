@@ -1,1 +1,8 @@
-<p>services works!</p>
+<div class="container">
+  <h1 style="text-align: center" class="m-5">
+    <strong>Choose your cleaning service!</strong>
+  </h1>
+  <div class="services-container">
+    <app-service *ngFor="let s of serviceProviders"></app-service>
+  </div>
+</div>
