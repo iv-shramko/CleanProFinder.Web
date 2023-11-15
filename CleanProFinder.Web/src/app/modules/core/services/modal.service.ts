@@ -1,23 +1,11 @@
-import { DOCUMENT } from '@angular/common';
-import {
-  ComponentFactoryResolver,
-  Inject,
-  Injectable,
-  Renderer2,
-  Type,
-  ViewContainerRef,
-} from '@angular/core';
+import { Injectable, Type, ViewContainerRef } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ModalService {
   private view!: ViewContainerRef;
-  constructor(
-    //private viewContainerRef: ViewContainerRef,
-    @Inject('MODAL_CONTAINER') private modalContainer: ViewContainerRef,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+  constructor() {}
 
   setContainer(container: ViewContainerRef) {
     console.log(container);
