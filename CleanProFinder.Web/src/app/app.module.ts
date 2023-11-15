@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     RouterModule,
     CommonModule,
+    NgbModule,
   ],
   bootstrap: [AppComponent],
 })
