@@ -38,9 +38,9 @@ export class SignupComponent {
       return;
     }
     if (role === 'customer') {
-      this.authApiService.createUser(model).subscribe();
+      this.authApiService.createUser(model);
     } else if (role === 'company') {
-      this.authApiService.createProvider(model).subscribe();
+      this.authApiService.createProvider(model);
     } else {
       console.error('Unexpected radio selection value');
     }

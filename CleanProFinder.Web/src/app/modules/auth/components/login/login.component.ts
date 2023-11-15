@@ -23,7 +23,7 @@ export class LoginComponent {
 
   handleFormSubmit() {
     const model = this.getFormValue();
-    this.authApiService.login(model).subscribe();
+    this.authApiService.login(model);
   }
 
   private getFormValue(): LoginModel {

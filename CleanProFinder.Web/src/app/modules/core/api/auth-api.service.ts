@@ -13,30 +13,57 @@ import { CreateUserModel } from './models/create-user.model';
 })
 export class AuthApiService {
   private readonly uris = AUTH_URIS;
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   createServiceProviderProfile(
     createModel: ServiceProviderProfileCreateModel
   ): Observable<any> {
     return this.httpClient.post<any>(
       this.uris.serviceProviderProfileCreate,
-      createModel
+      createModel,
+      {
+        headers: this.authHeaders(),
+      }
     );
   }
 
   createCustomerProfile(createModel: CustomerProfileCreateModel): Observable<any> {
-    return this.httpClient.post<any>(this.uris.customerProfileCreate, createModel);
+    return this.httpClient.post<any>(this.uris.customerProfileCreate, createModel, {
+      headers: this.authHeaders(),
+    });
   }
 
-  login(model: LoginModel): Observable<any> {
-    return this.httpClient.post<any>(this.uris.login, model);
+  login(model: LoginModel): void {
+    this.httpClient.post<any>(this.uris.login, model).subscribe((res) => {
+      localStorage.setItem('authToken', res.bearer);
+    });
   }
 
-  createUser(model: CreateUserModel): Observable<any> {
-    return this.httpClient.post<any>(this.uris.createUser, model);
+  createUser(model: CreateUserModel): void {
+    this.httpClient.post<any>(this.uris.createUser, model).subscribe((res) => {
+      localStorage.setItem('authToken', res.bearer);
+    });
   }
 
-  createProvider(model: CreateProviderModel): Observable<any> {
-    return this.httpClient.post<any>(this.uris.createProvider, model);
+  createProvider(model: CreateProviderModel): void {
+    this.httpClient.post<any>(this.uris.createProvider, model).subscribe((res) => {
+      localStorage.setItem('authToken', res.bearer);
+    });
+  }
+
+  isAuthenticated() {
+    return !!this.getAuthToken();
+  }
+
+  authHeaders(): { [header: string]: string } {
+    let token = this.getAuthToken();
+    if (!token) {
+      return {};
+    }
+    return { Authorization: `Bearer ${token}` };
+  }
+
+  private getAuthToken(): string | null {
+    return localStorage.getItem('authToken');
   }
 }
