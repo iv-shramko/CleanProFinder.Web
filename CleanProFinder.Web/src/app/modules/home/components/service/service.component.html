@@ -1,0 +1,23 @@
+<div class="base-card">
+  <img class="base-card-image" src="https://picsum.photos/345/250" />
+  <div class="base-card-body">
+    <div class="row mt-2">
+      <div class="col-7">
+        {{ service.name }}
+      </div>
+      <div class="col-5">
+        <app-rating [value]="service.rating"></app-rating>
+      </div>
+    </div>
+    <div class="row my-3">
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
+  <div class="base-card-footer">
+    <img class="like-icon" src="../../../../../assets/icons/like.svg" alt="like" />
+    <button class="see-more-button">
+      <span>See more</span>
+      <img src="../../../../../assets/icons/arrow-narrow-right.svg" />
+    </button>
+  </div>
+</div>

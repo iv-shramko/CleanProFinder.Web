@@ -1,0 +1,60 @@
+// :host {
+//   width: 100%;
+//   height: 100vh;
+//   background-color: #0000007f;
+//   position: absolute;
+// }
+form {
+  background-color: var(--primary-light);
+  padding: 3em;
+}
+
+.go-bach-button {
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #1db19f;
+  background-color: #1db19f;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+  padding-top: 3px;
+  font-size: 1.2rem;
+}
+
+.save-button {
+  text-decoration: none;
+  color: #1db19f;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #1db19f;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+  padding-top: 3px;
+  font-size: 1.2rem;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  font-family: 'GeneralSans-Regular';
+
+  label {
+    color: #1db19f;
+  }
+
+  textarea,
+  input {
+    outline: none;
+    border: 2px solid;
+    border-radius: 8px;
+    height: 3rem;
+    border-color: #1db19f;
+    padding-left: 5%;
+  }
+
+  textarea,
+  input:focus {
+    border-color: #0e786b;
+  }
+}

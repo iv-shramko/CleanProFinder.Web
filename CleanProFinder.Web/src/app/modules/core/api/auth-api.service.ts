@@ -13,7 +13,7 @@ import { CreateUserModel } from './models/create-user.model';
 })
 export class AuthApiService {
   private readonly uris = AUTH_URIS;
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   createServiceProviderProfile(
     createModel: ServiceProviderProfileCreateModel
@@ -65,5 +65,10 @@ export class AuthApiService {
 
   private getAuthToken(): string | null {
     return localStorage.getItem('authToken');
+  }
+
+  isAuthenticated() {
+    //check token
+    return true;
   }
 }

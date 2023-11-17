@@ -10,6 +10,7 @@ import { ServiceProviderProfileComponent } from './components/service-provider-p
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthApiService } from 'src/app/modules/core/api/auth-api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IdentityService } from 'src/app/modules/auth/services/identity.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthApiService],
+  providers: [AuthApiService, IdentityService],
 })
-export class AuthModule { }
+export class AuthModule {}

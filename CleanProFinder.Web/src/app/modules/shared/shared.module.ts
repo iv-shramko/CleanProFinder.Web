@@ -6,6 +6,11 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { UnauthorizedPageComponent } from './components/unauthorized-page/unauthorized-page.component';
 import { CardDesignComponent } from './components/card-design/card-design.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,8 +18,17 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     UnauthorizedPageComponent,
     CardDesignComponent,
     LandingPageComponent,
+    HeaderComponent,
+    RatingComponent,
+    FileUploadComponent,
   ],
-  imports: [CommonModule, SharedRoutingModule],
-  exports: [CardDesignComponent, LandingPageComponent],
+  imports: [CommonModule, SharedRoutingModule, FormsModule, ReactiveFormsModule],
+  exports: [
+    CardDesignComponent,
+    LandingPageComponent,
+    HeaderComponent,
+    RatingComponent,
+    FileUploadComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

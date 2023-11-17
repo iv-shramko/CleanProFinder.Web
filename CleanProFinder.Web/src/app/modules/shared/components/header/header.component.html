@@ -1,0 +1,28 @@
+<div class="header" [ngSwitch]="role">
+  <ng-container *ngSwitchCase="'customer'">
+    <div class="row p-3">
+      <div class="col-7 link-container">
+        <button
+          class="nav-link"
+          routerLink="premises"
+          routerLinkActive="nav-link-active">
+          Premises
+        </button>
+        <button
+          class="nav-link"
+          routerLink="services"
+          routerLinkActive="nav-link-active">
+          Services
+        </button>
+      </div>
+      <div class="col-5">
+        <button class="profile-button">
+          <img src="../../../../../assets/icons/user.svg" />
+          <span>Ivan</span>
+          <span>Shramko</span>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'serviceProvider'"></ng-container>
+</div>

@@ -26,5 +26,15 @@ body {
     flex-basis: 50%;
   }
   font-family: 'GeneralSans-Regular';
-  min-height: 100vh;
 }
+
+:root {
+  --primary-light: #b0f5eb;
+  --primary: #1db19f;
+  --primary-dark: #0e786b;
+  --black: #181818;
+  --white: #ffffff;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

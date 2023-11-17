@@ -9,7 +9,7 @@ import { LoginModel } from 'src/app/modules/core/api/models/login.model';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private authApiService: AuthApiService) { }
+  constructor(private authApiService: AuthApiService) {}
 
   fields = {
     email: 'email',
