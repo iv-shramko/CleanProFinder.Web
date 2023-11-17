@@ -36,7 +36,8 @@ export class AuthApiService {
   login(model: LoginModel): void {
     this.httpClient.post<any>(this.uris.login, model).subscribe((res) => {
       localStorage.setItem('authToken', res.bearer);
-      window.location.assign('/');
+      //TODO root redirect, from there where needed
+      window.location.assign('/premises');
     });
   }
 

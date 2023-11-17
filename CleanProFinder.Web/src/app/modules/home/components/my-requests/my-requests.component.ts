@@ -27,16 +27,27 @@ export class MyRequestsComponent implements OnInit {
     this.requests = [
       {
         id: 'sjfs8sl4-nad0-4d3a-8b3a-2f8f8f8f8f8f',
-        square: 100,
-        address: 'asdfasdfa ave. 123',
+        square: 95,
+        address: 'Kharkiv city, Kozacka alley 67/2',
         services: [
           {
             id: 'al49sdfj-4d3a-8b3a-2f8f8f8f8f8f',
-            name: 'dip',
+            name: 'Vacuum',
           },
           {
             id: 'baefl4sl-4d3a-8b3a-2f8f8f8f8f8f',
-            name: 'shit',
+            name: 'Chemo',
+          },
+        ],
+      },
+      {
+        id: 'sjfs8sl4-nad0-4d3a-8b3a-2asdasdasdasd',
+        square: 95,
+        address: 'Kharkiv city, Kozacka alley 67/2',
+        services: [
+          {
+            id: 'baefl4sl-4d3a-8b3a-2f8f8f8f8f8f',
+            name: 'Chemo',
           },
         ],
       },
