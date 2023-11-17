@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <form [formGroup]="params.form">
-        <img src="../../../../assets/icons/plus.svg" alt="" *ngIf="!fileName" />
+        <img src="../../../../../assets/icons/plus.svg" alt="" *ngIf="!fileName" />
         <p>{{ fileName || params?.mainText || '' }}</p>
         <input
           formControlName="{{ params?.formControlName }}"

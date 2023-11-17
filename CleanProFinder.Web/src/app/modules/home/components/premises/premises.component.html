@@ -2,6 +2,11 @@
   <h1 style="text-align: center" class="m-5">
     <strong>Editing your premises</strong>
   </h1>
+  <div class="row my-3">
+    <div class="col d-flex justify-content-end">
+      <button class="add-button" (click)="handleAddPremise()">Add</button>
+    </div>
+  </div>
   <div class="premises-container">
     <app-premise *ngFor="let s of premises"></app-premise>
   </div>

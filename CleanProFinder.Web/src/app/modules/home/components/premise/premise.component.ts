@@ -1,6 +1,7 @@
 import { ModalService } from 'src/app/modules/core/services/modal.service';
 import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { PremiseEditModalComponent } from 'src/app/modules/home/components/premise-edit-modal/premise-edit-modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-premise',
@@ -8,7 +9,10 @@ import { PremiseEditModalComponent } from 'src/app/modules/home/components/premi
   styleUrls: ['./premise.component.scss'],
 })
 export class PremiseComponent implements OnInit {
-  constructor(private modalService: ModalService) {}
+  constructor(
+    private modalService: ModalService,
+    private ngbModal: NgbModal
+  ) {}
 
   @Input() premise = {
     name: 'Premise 1',
@@ -23,7 +27,8 @@ export class PremiseComponent implements OnInit {
   ngOnInit(): void {}
 
   handlePremiseEdit() {
-    this.modalService.open(PremiseEditModalComponent);
+    this.ngbModal.open(PremiseEditModalComponent, { size: 'xl', centered: true });
+    // this.modalService.open(PremiseEditModalComponent);
     //this.viewContainerRef.createComponent(PremiseEditModalComponent);
   }
 }
