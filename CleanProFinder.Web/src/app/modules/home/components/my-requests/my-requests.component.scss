@@ -1,0 +1,44 @@
+.request-list {
+  //TODO REMOVE
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  //TODO REMOVE-END
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.request {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--primary-dark);
+  padding: 1rem;
+  border-radius: 16px;
+  color: var(--white);
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.address {
+  margin: 0;
+  font-family: 'Chillax-Semibold';
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.service {
+  padding: 5px;
+  border-radius: 16px;
+  border: 2.5px solid var(--primary);
+  color: var(--white);
+  font-family: 'GeneralSans-Semibold';
+  background-color: var(--primary);
+}

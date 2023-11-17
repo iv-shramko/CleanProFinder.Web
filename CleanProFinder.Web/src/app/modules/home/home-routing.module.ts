@@ -6,6 +6,7 @@ import { PremisesComponent } from 'src/app/modules/home/components/premises/prem
 import { ServicesComponent } from 'src/app/modules/home/components/services/services.component';
 import { ServiceProviderGuard } from '../core/guards/service-provider.guard';
 import { ProviderServicesComponent } from './components/provider-services/provider-services.component';
+import { MyRequestsComponent } from './components/my-requests/my-requests.component';
 
 const uri = {
   SERVICES: 'services',
@@ -13,6 +14,7 @@ const uri = {
   PREMISES: 'premises',
   BASE: '',
   PROVIDER_SERVICES: 'my-services',
+  MY_REQUESTS: 'my-requests',
 };
 
 const routes: Routes = [
@@ -28,6 +30,11 @@ const routes: Routes = [
       {
         path: uri.PREMISES,
         component: PremisesComponent,
+        canActivate: [CustomerGuard],
+      },
+      {
+        path: uri.MY_REQUESTS,
+        component: MyRequestsComponent,
         canActivate: [CustomerGuard],
       },
       {

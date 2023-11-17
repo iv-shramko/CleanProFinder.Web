@@ -1,0 +1,11 @@
+<div class="request-list">
+  <div class="request" *ngFor="let request of requests">
+    <h3 class="address">{{ request.address }}</h3>
+    <span>{{ request.square }} m²</span>
+    <div class="services">
+      <span class="service" *ngFor="let service of request.services">
+        {{ service.name }}
+      </span>
+    </div>
+  </div>
+</div>

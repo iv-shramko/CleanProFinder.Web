@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-//TODO move somewhere, add field
 type Service = {
   id: number;
   name: string;
