@@ -19,7 +19,6 @@ export class AuthApiService {
     createModel: ServiceProviderProfileCreateModel
   ): Observable<any> {
     return this.httpClient.post<any>(
-      //TODO: set token
       this.uris.serviceProviderProfileCreate,
       createModel,
       {
