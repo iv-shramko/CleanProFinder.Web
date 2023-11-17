@@ -35,7 +35,7 @@
   font-family: 'GeneralSans-Regular';
 
   label {
-    color: var(--primary-color);
+    color: var(--primary);
   }
 
   input {
@@ -43,12 +43,12 @@
     border: 2px solid;
     border-radius: 8px;
     height: 3rem;
-    border-color: var(--primary-color);
+    border-color: var(--primary);
     padding-left: 5%;
   }
 
   input:focus {
-    border-color: var(--secondary-color);
+    border-color: var(--primary-dark);
   }
 }
 
@@ -126,7 +126,7 @@
 }
 
 .login-link {
-  color: var(--primary-color);
+  color: var(--primary);
   text-decoration: none;
 }
 
