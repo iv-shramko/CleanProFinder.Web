@@ -1,0 +1,99 @@
+.orders {
+  color: white;
+  font-family: 'Chillax-Semibold';
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 3rem;
+  justify-items: center;
+}
+
+.order {
+  padding: 1rem;
+  background-color: var(--primary);
+  border-radius: 16px;
+}
+
+.order-info {
+  margin: 1.5rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.address {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 36px;
+}
+
+.services {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.service {
+  background-color: var(--primary-dark);
+  border-radius: 16px;
+  padding: 5px 10px;
+}
+
+.specs {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.spec-label {
+  font-family: 'GeneralSans-Regular';
+  color: var(--primary-light);
+}
+
+.description {
+  font-family: 'GeneralSans-Regular';
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actions-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-left: 8rem;
+}
+
+.action {
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  background-color: var(--primary);
+  border: 2px solid var(--primary-light);
+  border-radius: 32px;
+  display: flex;
+  gap: 1rem;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.action:hover {
+  cursor: pointer;
+  background-color: var(--primary-dark);
+}

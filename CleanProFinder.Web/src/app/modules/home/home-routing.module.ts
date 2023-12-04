@@ -6,6 +6,7 @@ import { PremisesComponent } from 'src/app/modules/home/components/premises/prem
 import { ServicesComponent } from 'src/app/modules/home/components/services/services.component';
 import { ServiceProviderGuard } from '../core/guards/service-provider.guard';
 import { ProviderServicesComponent } from './components/provider-services/provider-services.component';
+import { PendingOrdersComponent } from './components/pending-orders/pending-orders.component';
 import { MyRequestsComponent } from './components/my-requests/my-requests.component';
 
 const uri = {
@@ -13,6 +14,7 @@ const uri = {
   ORDERS: 'orders',
   PREMISES: 'premises',
   BASE: '',
+  PENDING_ORDERS: 'pending-orders',
   PROVIDER_SERVICES: 'my-services',
   MY_REQUESTS: 'my-requests',
 };
@@ -36,6 +38,11 @@ const routes: Routes = [
         path: uri.MY_REQUESTS,
         component: MyRequestsComponent,
         canActivate: [CustomerGuard],
+      },
+      {
+        path: uri.PENDING_ORDERS,
+        component: PendingOrdersComponent,
+        canActivate: [ServiceProviderGuard],
       },
       {
         path: uri.PROVIDER_SERVICES,

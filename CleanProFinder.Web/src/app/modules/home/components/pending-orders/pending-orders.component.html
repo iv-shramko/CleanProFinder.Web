@@ -1,0 +1,44 @@
+<div class="orders">
+  <div class="order" *ngFor="let order of orders">
+    <img class="base-card-image" src="https://picsum.photos/375/250" />
+    <div class="order-info">
+      <h1 class="address">{{ order.premise.address }}</h1>
+      <div class="services">
+        <span class="service" *ngFor="let service of order.services">{{
+          service.name
+        }}</span>
+      </div>
+      <div class="specs">
+        <div class="spec">
+          <span class="spec-label">Area</span>
+          <span class="spec-value">{{ order.premise.area }}m2</span>
+        </div>
+        <div class="spec">
+          <span class="spec-label">Rooms</span>
+          <span class="spec-value">{{ order.premise.rooms }}</span>
+        </div>
+        <div class="spec">
+          <span class="spec-label">Floor</span>
+          <span class="spec-value">{{ order.premise.floor }}</span>
+        </div>
+        <div class="spec">
+          <span class="spec-label">Pets?</span>
+          <span class="spec-value">{{ order.premise.pets || 'none' }}</span>
+        </div>
+      </div>
+      <span class="description">
+        {{ order.description }}
+      </span>
+    </div>
+    <div class="actions-overlay">
+      <div class="action">
+        <span>Hide</span>
+        <img src="../../../../../assets/icons/hide.png" />
+      </div>
+      <div class="action">
+        <span>Respond</span>
+        <img src="../../../../../assets/icons/respond.png" />
+      </div>
+    </div>
+  </div>
+</div>

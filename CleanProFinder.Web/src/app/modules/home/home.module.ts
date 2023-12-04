@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { ServiceComponent } from './components/service/service.component';
 import { ProviderServicesComponent } from './components/provider-services/provider-services.component';
 import { MyRequestsComponent } from './components/my-requests/my-requests.component';
+import { PendingOrdersComponent } from './components/pending-orders/pending-orders.component';
 import { PremisesComponent } from './components/premises/premises.component';
 import { PremiseComponent } from './components/premise/premise.component';
 import { PremiseEditModalComponent } from './components/premise-edit-modal/premise-edit-modal.component';
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     ServiceComponent,
     ProviderServicesComponent,
     MyRequestsComponent,
+    PendingOrdersComponent,
     PremisesComponent,
     PremiseComponent,
     PremiseEditModalComponent,
