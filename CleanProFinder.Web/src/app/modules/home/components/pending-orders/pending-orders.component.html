@@ -1,0 +1,19 @@
+<div class="pending-orders">
+  <h1 class="title">Pending orders</h1>
+  <div class="orders">
+    <div class="order" *ngFor="let order of orders" [ngClass]="{ hidden: order.hidden }">
+      <app-order-card [order]="order">
+      </app-order-card>
+      <div class="actions-overlay">
+        <div class="action" (click)="hideOrder(order.id)">
+          <span>Hide</span>
+          <img src="../../../../../assets/icons/hide.png" />
+        </div>
+        <a href="/accept-order/{{ order.id }}" class="action">
+          <span>Respond</span>
+          <img src="../../../../../assets/icons/respond.png" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
