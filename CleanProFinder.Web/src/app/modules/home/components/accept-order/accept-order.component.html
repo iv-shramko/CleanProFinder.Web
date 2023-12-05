@@ -1,0 +1,23 @@
+<div class="accept-order">
+  <h1 class="title">Make an offer</h1>
+  <div class="order-content">
+    <app-order-card [order]="order!"> </app-order-card>
+    <form class="form" (submit)="confirmOrder()">
+      <div class="input">
+        <label for="message-to-customer">Write a message to customer</label>
+        <textarea id="message-to-customer" class="input-field"></textarea>
+      </div>
+      <div class="input">
+        <label for="offer-price">Set a price</label>
+        <div class="price-input">
+          <input id="offer-price" type="number" name="price" class="input-field" />
+          <span class="currency">₴</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a href="/pending-orders" class="cancel">Cancel</a>
+        <button type="submit" class="confirm">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div>

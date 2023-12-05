@@ -38,7 +38,7 @@ export class PendingOrdersComponent implements OnInit {
               'There are problematic carpet which should be revised with every cleaning. There’s also a cat which may be scared of people',
           },
           {
-            id: 'sjfs8sl4-nad0-4d3a-8b3a-2asdasdasdasd',
+            id: 'sjfs8sl4-nad0-4d3a-8b3a-2f8f8f89lksd',
             hidden: false,
             premise: {
               address: 'Nauky avenue 12',

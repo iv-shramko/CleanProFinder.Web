@@ -7,6 +7,7 @@ import { ServicesComponent } from 'src/app/modules/home/components/services/serv
 import { ServiceProviderGuard } from '../core/guards/service-provider.guard';
 import { ProviderServicesComponent } from './components/provider-services/provider-services.component';
 import { PendingOrdersComponent } from './components/pending-orders/pending-orders.component';
+import { AcceptOrderComponent } from './components/accept-order/accept-order.component';
 import { MyRequestsComponent } from './components/my-requests/my-requests.component';
 
 const uri = {
@@ -15,6 +16,7 @@ const uri = {
   PREMISES: 'premises',
   BASE: '',
   PENDING_ORDERS: 'pending-orders',
+  ACCEPT_ORDERS: 'accept-order/:orderId',
   PROVIDER_SERVICES: 'my-services',
   MY_REQUESTS: 'my-requests',
 };
@@ -47,6 +49,11 @@ const routes: Routes = [
       {
         path: uri.PROVIDER_SERVICES,
         component: ProviderServicesComponent,
+        canActivate: [ServiceProviderGuard],
+      },
+      {
+        path: uri.ACCEPT_ORDERS,
+        component: AcceptOrderComponent,
         canActivate: [ServiceProviderGuard],
       },
     ],

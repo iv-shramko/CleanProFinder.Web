@@ -9,6 +9,7 @@ import { ServiceComponent } from './components/service/service.component';
 import { ProviderServicesComponent } from './components/provider-services/provider-services.component';
 import { MyRequestsComponent } from './components/my-requests/my-requests.component';
 import { PendingOrdersComponent } from './components/pending-orders/pending-orders.component';
+import { AcceptOrderComponent } from './components/accept-order/accept-order.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PremisesComponent } from './components/premises/premises.component';
 import { PremiseComponent } from './components/premise/premise.component';
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     ProviderServicesComponent,
     MyRequestsComponent,
     PendingOrdersComponent,
+    AcceptOrderComponent,
     OrderCardComponent,
     PremisesComponent,
     PremiseComponent,
