@@ -1,11 +1,11 @@
 <div class="base-card">
   <img class="base-card-image" src="https://picsum.photos/345/250" />
   <div class="base-card-body">
-    <div class="row mt-2">
+    <!-- <div class="row mt-2">
       <div class="col">
         {{ premise.name }}
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col">
         <p>Address</p>
@@ -23,7 +23,7 @@
           <div class="col-4 d-flex justify-content-center"><p>Rooms</p></div>
           <div class="col-4 d-flex justify-content-center"><p>Floor</p></div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-4 d-flex justify-content-center">
             <p>{{ premise.area }}m2</p>
           </div>
@@ -33,7 +33,7 @@
           <div class="col-4 d-flex justify-content-center">
             <p>{{ premise.floor }}</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="row my-3">
@@ -44,6 +44,10 @@
     <img class="edit-icon" src="../../../../../assets/icons/like.svg" alt="like" />
     <button (click)="handlePremiseEdit()" class="edit-button">
       <span>Edit</span>
+      <img src="../../../../../assets/icons/pencil.svg" />
+    </button>
+    <button (click)="handleCreateRequest()" class="edit-button">
+      <span>Create request</span>
       <img src="../../../../../assets/icons/pencil.svg" />
     </button>
   </div>

@@ -1,0 +1,13 @@
+<!-- request-service-provider.component.html -->
+<div *ngIf="request">
+  <h2>{{ request.name }}</h2>
+  <p>{{ request.description }}</p>
+  <div
+    *ngFor="let service of request.services"
+    class="service"
+    (mouseover)="showPrice(service.cleaningServiceId)">
+    <p>{{ service.name }}</p>
+    <p>{{ service.description }}</p>
+    <div *ngIf="service.cleaningServiceId == hovered">Price: {{ service.price }}</div>
+  </div>
+</div>
