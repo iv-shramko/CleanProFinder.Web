@@ -1,3 +1,5 @@
+import { ServiceProviderFullModel } from 'src/app/modules/core/api/models/service-provide-request-create.model';
+import { ProfilesApiService } from './../../../core/api/profiles-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
-  constructor() {}
+  constructor(private ProfilesApiService: ProfilesApiService) {}
 
-  ngOnInit(): void {}
-  serviceProviders = ['1', '2', '3', '4,', '5'];
+  serviceProviders: ServiceProviderFullModel[] = [];
+  ngOnInit(): void {
+    this.ProfilesApiService.getServiceProviderList().subscribe(
+      (list) => (this.serviceProviders = list)
+    );
+  }
 }

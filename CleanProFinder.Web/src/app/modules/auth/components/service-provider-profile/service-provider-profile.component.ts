@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ROLES } from 'src/app/modules/auth/constants/roles';
 import { AuthApiService } from 'src/app/modules/core/api/auth-api.service';
 import { ServiceProviderProfileCreateModel } from 'src/app/modules/core/api/models/service-provider-profile-create.model';
+import { IdentityService } from 'src/app/modules/auth/services/identity.service';
 
 @Component({
   selector: 'app-service-provider-profile',
@@ -9,7 +12,11 @@ import { ServiceProviderProfileCreateModel } from 'src/app/modules/core/api/mode
   styleUrls: ['./service-provider-profile.component.scss'],
 })
 export class ServiceProviderProfileComponent {
-  constructor(private authApiService: AuthApiService) {}
+  constructor(
+    private authApiService: AuthApiService,
+    private IdentityService: IdentityService,
+    private router: Router
+  ) {}
   //readonly phoneNumberPatten = `^+d{1,4}d{0,6}$`;
   readonly phoneNumberPatten = '';
   //readonly websitePatten = `^(https?|ftp)://[^s/$.?#].[^s]*$`;
@@ -32,14 +39,26 @@ export class ServiceProviderProfileComponent {
 
   handleFormSubmit() {
     const model = this.getFormValue();
-    this.authApiService.createServiceProviderProfile(model).subscribe();
+    this.authApiService.createServiceProviderProfile(model).subscribe(
+      (res) => {
+        alert('registration is successful');
+
+        const role = this.IdentityService.getRole();
+        if (role == ROLES.CUSTOMER) {
+          this.router.navigate(['premises']);
+        } else {
+          this.router.navigate(['active-requests']);
+        }
+      },
+      (error) => alert('invalid data')
+    );
   }
 
   private getFormValue(): ServiceProviderProfileCreateModel {
     return {
       name: this.profileForm.controls[this.formFields.name].value,
       phoneNumber: this.profileForm.controls[this.formFields.phoneNumber].value,
-      website: this.profileForm.controls[this.formFields.website].value,
+      site: this.profileForm.controls[this.formFields.website].value,
     };
   }
 }

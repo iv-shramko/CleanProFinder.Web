@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RequestModalComponent } from './components/request-modal/request-modal.component';
 import { PickServiceCreateRequestModalComponent } from './components/pick-service-create-request-modal/pick-service-create-request-modal.component';
 import { ProviderRequestCreateComponent } from './components/provider-request-create/provider-request-create.component';
+import { RequestEditModalComponent } from './components/request-edit-modal/request-edit-modal.component';
+import { ProviderRequestsComponent } from './components/provider-requests/provider-requests.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ProviderRequestCreateComponent } from './components/provider-request-cr
     RequestModalComponent,
     PickServiceCreateRequestModalComponent,
     ProviderRequestCreateComponent,
+    RequestEditModalComponent,
+    ProviderRequestsComponent,
   ],
   imports: [
     CommonModule,

@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SaveProviderModel } from 'src/app/modules/core/api/models/saved-provider.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SavedProvidersApiService {
-  private baseUrl = 'https://api.example.com/my-saved-providers';
+  private baseUrl = `${environment.apiUrl}/SavedProvider/my-saved-providers`;
 
   constructor(private http: HttpClient) {}
 

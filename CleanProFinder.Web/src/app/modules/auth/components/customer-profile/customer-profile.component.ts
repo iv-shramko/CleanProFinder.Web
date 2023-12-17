@@ -1,8 +1,11 @@
+import { IdentityService } from 'src/app/modules/auth/services/identity.service';
 import { AuthApiService } from './../../../core/api/auth-api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomerProfileCreateModel } from 'src/app/modules/core/api/models/customer-profile-create.model';
 import { ServiceProviderProfileCreateModel } from 'src/app/modules/core/api/models/service-provider-profile-create.model';
+import { Router } from '@angular/router';
+import { ROLES } from 'src/app/modules/auth/constants/roles';
 
 @Component({
   selector: 'app-customer-profile',
@@ -10,7 +13,11 @@ import { ServiceProviderProfileCreateModel } from 'src/app/modules/core/api/mode
   styleUrls: ['./customer-profile.component.scss'],
 })
 export class CustomerProfileComponent {
-  constructor(private authApiService: AuthApiService) {}
+  constructor(
+    private authApiService: AuthApiService,
+    private IdentityService: IdentityService,
+    private router: Router
+  ) {}
   //readonly phoneNumberPatten = `^+d{1,4}d{0,6}$`;
   readonly phoneNumberPatten = '';
   readonly websitePatten = '';
@@ -29,7 +36,19 @@ export class CustomerProfileComponent {
 
   handleFormSubmit() {
     const model = this.getFormValue();
-    this.authApiService.createCustomerProfile(model).subscribe();
+    this.authApiService.createCustomerProfile(model).subscribe(
+      (res) => {
+        alert('registration is successful');
+
+        const role = this.IdentityService.getRole();
+        if (role == ROLES.CUSTOMER) {
+          this.router.navigateByUrl('/premises');
+        } else {
+          this.router.navigateByUrl('/active-requests');
+        }
+      },
+      (error) => alert('invalid data')
+    );
   }
 
   private getFormValue(): CustomerProfileCreateModel {

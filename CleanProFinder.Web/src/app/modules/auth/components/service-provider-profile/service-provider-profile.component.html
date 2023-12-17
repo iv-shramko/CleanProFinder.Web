@@ -48,6 +48,7 @@
             <button
               class="save-changes-btn"
               type="submit"
+              (click)="handleFormSubmit()"
               [disabled]="!profileForm.valid">
               {{ pageText.saveChangesButton }}
             </button>

@@ -41,6 +41,7 @@
               {{ pageText.goBackButton }}
             </button>
             <button
+              (click)="handleFormSubmit()"
               class="save-changes-btn"
               type="submit"
               [disabled]="!profileForm.valid">

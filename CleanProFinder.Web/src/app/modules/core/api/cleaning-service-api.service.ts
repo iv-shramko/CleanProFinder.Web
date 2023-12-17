@@ -2,21 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CleaningServiceShort } from 'src/app/modules/core/api/models/cleaing-service-short.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CleaningServiceApiService {
-  private baseUrl = 'https://api.example.com/cleaningservices';
+  private baseUrl = `${environment.apiUrl}/CleaningService`;
 
   constructor(private http: HttpClient) {}
 
   create(data: CleaningServiceShort): Observable<void> {
-    return this.http.post<void>(`${this.baseUrl}`, data);
+    return this.http.post<void>(`${this.baseUrl}/create`, data);
   }
 
   getAll(): Observable<CleaningServiceShort[]> {
-    return this.http.get<CleaningServiceShort[]>(`${this.baseUrl}`);
+    return this.http.get<CleaningServiceShort[]>(`${this.baseUrl}/services`);
   }
 
   delete(id: string): Observable<void> {
@@ -24,6 +25,6 @@ export class CleaningServiceApiService {
   }
 
   edit(id: string, data: CleaningServiceShort): Observable<void> {
-    return this.http.put<void>(`${this.baseUrl}/${id}`, data);
+    return this.http.post<void>(`${this.baseUrl}/edit`, data);
   }
 }

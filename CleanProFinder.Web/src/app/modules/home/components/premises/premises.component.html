@@ -8,6 +8,6 @@
     </div>
   </div>
   <div class="premises-container">
-    <app-premise *ngFor="let s of premises"></app-premise>
+    <app-premise [premise]="premise" *ngFor="let premise of premises"></app-premise>
   </div>
 </div>

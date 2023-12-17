@@ -1,6 +1,6 @@
 import { CleaningService } from 'src/app/modules/core/api/models/cleaing-service.model';
 
-export interface ServiceProviderModel {
+export interface ServiceProviderProfile {
   name: string;
   description: string;
   phoneNumber: string;

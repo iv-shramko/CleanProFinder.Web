@@ -3,14 +3,14 @@
   <div class="base-card-body">
     <div class="row mt-2">
       <div class="col-7">
-        {{ service.name }}
+        {{ service?.name }}
       </div>
-      <div class="col-5">
-        <app-rating [value]="service.rating"></app-rating>
-      </div>
+      <!-- <div class="col-5">
+        <app-rating [value]="service"></app-rating>
+      </div> -->
     </div>
     <div class="row my-3">
-      <p>{{ service.description }}</p>
+      <p>{{ service?.description }}</p>
     </div>
   </div>
   <div class="base-card-footer">

@@ -1,5 +1,5 @@
 <div class="header" [ngSwitch]="role">
-  <ng-container *ngSwitchCase="'customer'">
+  <ng-container *ngSwitchCase="'service-user'">
     <div class="row p-3">
       <div class="col-7 link-container">
         <button
@@ -27,8 +27,34 @@
           <span>Ivan</span>
           <span>Shramko</span>
         </button>
+        <button (click)="logout()" class="profile-button">Logout</button>
       </div>
     </div>
   </ng-container>
-  <ng-container *ngSwitchCase="'serviceProvider'"></ng-container>
+  <ng-container *ngSwitchCase="'service-provider'">
+    <div class="row p-3">
+      <div class="col-7 link-container">
+        <button
+          class="nav-link"
+          routerLink="my-services"
+          routerLinkActive="nav-link-active">
+          My services
+        </button>
+        <button
+          class="nav-link"
+          routerLink="active-requests"
+          routerLinkActive="nav-link-active">
+          Active requests
+        </button>
+        <div class="col-5">
+          <button class="profile-button">
+            <img src="../../../../../assets/icons/user.svg" />
+            <span>Ivan</span>
+            <span>Shramko</span>
+          </button>
+          <button (click)="logout()" class="profile-button">Logout</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>

@@ -1,4 +1,4 @@
 export const ROLES = {
-  CUSTOMER: 'customer',
-  SERVICE_PROVIDER: 'serviceProvider',
+  CUSTOMER: 'service-user',
+  SERVICE_PROVIDER: 'service-provider',
 };

@@ -1,13 +1,21 @@
 <!-- request-service-provider.component.html -->
-<div *ngIf="request">
-  <h2>{{ request.name }}</h2>
-  <p>{{ request.description }}</p>
-  <div
-    *ngFor="let service of request.services"
+<div>
+  <h2>{{ provider.name }}</h2>
+  <p>{{ provider.description }}</p>
+  <hr />
+  <!-- <div
+    *ngFor="let service of provider.services"
     class="service"
-    (mouseover)="showPrice(service.cleaningServiceId)">
+    (mouseover)="showPrice(service.cleaningServiceId)"
+    (mouseout)="hidePrice()"
+    > -->
+  <div *ngFor="let service of provider.services" class="service">
+    <!-- <p *ngIf="service.cleaningServiceId !== hovered">{{ service.name }}</p> -->
     <p>{{ service.name }}</p>
-    <p>{{ service.description }}</p>
-    <div *ngIf="service.cleaningServiceId == hovered">Price: {{ service.price }}</div>
+    <p>Price: {{ service.price }}</p>
   </div>
 </div>
+<hr />
+<button (click)="toggleSelect()">
+  <span *ngIf="!isSelected">Select</span> <span *ngIf="isSelected">unselect</span>
+</button>

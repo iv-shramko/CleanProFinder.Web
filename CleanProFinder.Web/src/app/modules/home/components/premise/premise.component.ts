@@ -4,6 +4,7 @@ import { PremiseEditModalComponent } from 'src/app/modules/home/components/premi
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RequestModalComponent } from 'src/app/modules/home/components/request-modal/request-modal.component';
 import { Premise } from 'src/app/modules/core/api/models/premise.model';
+import { PremiseShort } from 'src/app/modules/core/api/models/premise-short.model';
 
 @Component({
   selector: 'app-premise',
@@ -16,22 +17,31 @@ export class PremiseComponent implements OnInit {
     private ngbModal: NgbModal
   ) {}
 
-  @Input() premise: Premise = {
-    square: 0,
-    description: '',
+  @Input() premise: PremiseShort = {
     address: '',
     id: '',
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.premise);
+  }
 
   handlePremiseEdit() {
-    this.ngbModal.open(PremiseEditModalComponent, { size: 'xl', centered: true });
+    const modal = this.ngbModal.open(PremiseEditModalComponent, {
+      size: 'xl',
+      centered: true,
+    });
+    modal.componentInstance.isEdit = true;
+    modal.componentInstance.premiseId = this.premise.id;
     // this.modalService.open(PremiseEditModalComponent);
     //this.viewContainerRef.createComponent(PremiseEditModalComponent);
   }
 
   handleCreateRequest() {
-    this.ngbModal.open(RequestModalComponent, { size: 'xl', centered: true });
+    var modal = this.ngbModal.open(RequestModalComponent, {
+      size: 'xl',
+      centered: true,
+    });
+    modal.componentInstance.premiseId = this.premise.id;
   }
 }

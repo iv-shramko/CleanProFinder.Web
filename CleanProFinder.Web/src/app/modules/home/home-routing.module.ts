@@ -1,3 +1,4 @@
+import { ProviderRequestsComponent } from './components/provider-requests/provider-requests.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomerGuard } from 'src/app/modules/core/guards/customer.guard';
@@ -15,6 +16,7 @@ const uri = {
   BASE: '',
   PROVIDER_SERVICES: 'my-services',
   MY_REQUESTS: 'my-requests',
+  ACTIVE_REQUESTS: 'active-requests',
 };
 
 const routes: Routes = [
@@ -42,6 +44,11 @@ const routes: Routes = [
         component: ProviderServicesComponent,
         canActivate: [ServiceProviderGuard],
       },
+      {
+        path: uri.ACTIVE_REQUESTS,
+        component: ProviderRequestsComponent,
+        canActivate: [ServiceProviderGuard],
+      },
     ],
   },
 ];
@@ -50,4 +57,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

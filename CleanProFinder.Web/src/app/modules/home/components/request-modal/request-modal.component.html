@@ -1,9 +1,29 @@
 <div class="request-component">
   <h1>Request Description</h1>
 
-  <app-premise [premise]="premise"></app-premise>
+  <div class="col">
+    <div class="row">
+      <div class="col control">
+        <label for="">Address</label>
+        <label for="">{{ premise?.address ?? '' }}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col control">
+        <label>Description</label>
+        <label>{{ premise?.description }}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 col-sm-12 control">
+        <label> Area (in m2)</label>
+        <label>{{ premise?.square }}</label>
+      </div>
+    </div>
+  </div>
 
   <form [formGroup]="requestForm">
+    <label>Request description</label>
     <input
       type="text"
       formControlName="notes"
@@ -15,8 +35,8 @@
         <li *ngFor="let service of cleaningServices">
           <input
             type="checkbox"
-            formControlName="services"
-            value="{{ service.cleaningServiceId }}" />
+            (change)="onServiceSelect(service.id)"
+            value="{{ service.id }}" />
           {{ service.name }}
         </li>
       </ul>
