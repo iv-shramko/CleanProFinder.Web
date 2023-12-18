@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-type Service = {
-  id: number;
-  name: string;
-  price: number;
-  provided: boolean;
-};
+import { CleaningServiceApiService } from 'src/app/modules/core/api/cleaning-service-api.service';
+import { CleaningServiceShort } from 'src/app/modules/core/api/models/cleaing-service-short.model';
+import { CleaningService } from 'src/app/modules/core/api/models/cleaing-service.model';
+import { ProfilesApiService } from './../../../core/api/profiles-api.service';
 
 @Component({
   selector: 'app-provider-services',
@@ -13,40 +10,44 @@ type Service = {
   styleUrls: ['./provider-services.component.scss'],
 })
 export class ProviderServicesComponent implements OnInit {
-  constructor() { }
-  services: Service[] = [];
+  constructor(
+    private profilesApiService: ProfilesApiService,
+    private cleaningApiService: CleaningServiceApiService
+  ) { }
+  myServices: CleaningService[] = [];
+  services: CleaningServiceShort[] = [];
 
   ngOnInit(): void {
-    //TODO: call API for that
-    let saved = localStorage.getItem('provider-services');
-    if (saved) {
-      this.services = JSON.parse(saved);
-    } else {
-      let defaults = { price: 0, provided: false };
-      this.services = [
-        { id: 1, name: 'Vacuum', ...defaults},
-        { id: 2, name: 'Chemo', ...defaults},
-        { id: 3, name: 'Rugs & sour', ...defaults},
-        { id: 4, name: 'Pisties', ...defaults},
-        { id: 5, name: 'Horkies', ...defaults},
-        { id: 6, name: 'Anhems', ...defaults},
-        { id: 7, name: 'Bards and Figure', ...defaults},
-        { id: 8, name: 'Hoppies', ...defaults},
-        { id: 9, name: 'Window screening', ...defaults},
-      ];
-    }
-  }
-
-  providedServices(): Service[] {
-    return this.services.filter((service) => service.provided);
-  }
-
-  toggleService(id: number) {
-    let service = this.services.find((service) => service.id === id)!;
-    service.provided = !service.provided;
+    this.profilesApiService.getProviderProfile().subscribe((res) => {
+      this.myServices = res.services;
+    });
+    this.cleaningApiService.getAll().subscribe((res) => {
+      this.services = res;
+    });
   }
 
   saveServices() {
-    localStorage.setItem('provider-services', JSON.stringify(this.services));
+    console.log(this.myServices);
+    this.profilesApiService.editProviderServices(this.myServices).subscribe();
+  }
+
+  isProvided(serviceId: string) {
+    return this.myServices.find((s) => s.cleaningServiceId === serviceId) !== undefined;
+  }
+
+  toggleService(serviceId: string) {
+    if (this.myServices.find((s) => s.cleaningServiceId === serviceId) !== undefined) {
+      this.myServices = this.myServices.filter(
+        (s) => s.cleaningServiceId !== serviceId
+      );
+    } else {
+      let service = this.services.find((s) => s.id === serviceId)!;
+      this.myServices.push({
+        cleaningServiceId: service.id,
+        name: service.name,
+        price: 0,
+        description: 'cleaning service',
+      });
+    }
   }
 }

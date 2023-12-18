@@ -42,7 +42,7 @@ export class ProfilesApiService {
   }
 
   editProviderServices(services: CleaningServiceEditModel[]) {
-    return this.http.post(`${this.baseUrl}/service-provider/edit-services`, services);
+    return this.http.post(`${this.baseUrl}/service-provider/edit-services`, { services });
   }
 
   getServiceProviderListItem(id: string) {

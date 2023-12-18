@@ -1,7 +1,7 @@
 <div class="all-services">
   <div class="provided-services">
     <h1>My services</h1>
-    <div class="provided-service" *ngFor="let service of providedServices()">
+    <div class="provided-service" *ngFor="let service of myServices">
       <span>
         {{ service.name }}
       </span>
@@ -15,8 +15,9 @@
       <div *ngFor="let service of services">
         <button
           class="service-badge"
-          [ngClass]="{ provided: service.provided }"
-          (click)="toggleService(service.id)">
+          [ngClass]="{ provided: isProvided(service.id) }"
+          (click)="toggleService(service.id)"
+          >
           {{ service.name }}
         </button>
       </div>
