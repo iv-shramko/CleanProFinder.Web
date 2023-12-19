@@ -7,13 +7,17 @@ import { ServiceProviderProfileCreateModel } from 'src/app/modules/core/api/mode
 import { LoginModel } from 'src/app/modules/core/api/models/login.model';
 import { CreateProviderModel } from './models/create-provider.model';
 import { CreateUserModel } from './models/create-user.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthApiService {
   private readonly uris = AUTH_URIS;
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router
+  ) {}
 
   createServiceProviderProfile(
     createModel: ServiceProviderProfileCreateModel
@@ -40,14 +44,16 @@ export class AuthApiService {
   createUser(model: CreateUserModel): void {
     this.httpClient.post<any>(this.uris.createUser, model).subscribe((res) => {
       localStorage.setItem('authToken', res.bearer);
-      window.location.assign('/auth/customer');
+      //window.location.assign('/auth/customer');
+      this.router.navigate(['auth', 'customer']);
     });
   }
 
   createProvider(model: CreateProviderModel): void {
     this.httpClient.post<any>(this.uris.createProvider, model).subscribe((res) => {
       localStorage.setItem('authToken', res.bearer);
-      window.location.assign('/auth/service-provider');
+      //window.location.assign('/auth/service-provider');
+      this.router.navigate(['auth', 'service-provider']);
     });
   }
 

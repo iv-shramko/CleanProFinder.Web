@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthApiService } from 'src/app/modules/core/api/auth-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IdentityService } from 'src/app/modules/auth/services/identity.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { IdentityService } from 'src/app/modules/auth/services/identity.service'
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    RouterModule,
   ],
   providers: [AuthApiService, IdentityService],
 })
