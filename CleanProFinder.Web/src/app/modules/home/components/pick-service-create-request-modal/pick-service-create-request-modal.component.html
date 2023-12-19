@@ -1,0 +1,15 @@
+<div class="container">
+  <app-provider-request-create
+    [provider]="provider"
+    (selected)="addProvider($event)"
+    (unselected)="removeProvider($event)"
+    *ngFor="let provider of providers"></app-provider-request-create>
+  <div class="row">
+    <div class="col">
+      <button (click)="cancel()">Go back</button>
+    </div>
+    <div class="col">
+      <button (click)="onSubmit()">Submit</button>
+    </div>
+  </div>
+</div>

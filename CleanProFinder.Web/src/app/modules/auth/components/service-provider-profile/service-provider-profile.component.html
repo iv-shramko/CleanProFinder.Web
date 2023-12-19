@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="col title-bar">
+          <img routerLink="/" src="../../../../../assets/icons/go-back.svg" alt="<-" />
+          <h1>{{ pageText.title }}</h1>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <form [formGroup]="profileForm" (submit)="handleFormSubmit()">
+            <div class="control">
+              <labeL>{{ formLabels.name }}</labeL>
+              <input
+                [formControlName]="formFields.name"
+                type="text"
+                [placeholder]="pageText.placeholder" />
+            </div>
+            <div class="control">
+              <labeL>{{ formLabels.phoneNumber }}</labeL>
+              <input
+                [formControlName]="formFields.phoneNumber"
+                type="text"
+                [placeholder]="pageText.placeholder" />
+            </div>
+            <div class="control">
+              <labeL>{{ formLabels.website }}</labeL>
+              <input
+                [formControlName]="formFields.website"
+                type="text"
+                [placeholder]="pageText.placeholder" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- file -->
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="button-group">
+            <button routerLink="/" class="go-back-btn">
+              {{ pageText.goBackButton }}
+            </button>
+            <button
+              class="save-changes-btn"
+              type="submit"
+              (click)="handleFormSubmit()"
+              [disabled]="!profileForm.valid">
+              {{ pageText.saveChangesButton }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <card-design></card-design>
+    </div>
+  </div>
+</div>

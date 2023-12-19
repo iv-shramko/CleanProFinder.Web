@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col control">
+          <label for="">Address</label>
+          <label for="">{{ premise?.address ?? '' }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col control">
+          <label>Description</label>
+          <label>{{ premise?.description }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 col-sm-12 control">
+          <label> Area (in m2)</label>
+          <label>{{ premise?.square }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <p>Description:</p>
+        <p>{{ requestInfo?.description }}</p>
+      </div>
+      <div class="row">
+        <p>Services:</p>
+        <div class="services">
+          <span class="service" *ngFor="let service of requestInfo?.services">
+            {{ service?.name }}
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <p>Provider:</p>
+        <div class="" *ngFor="let interaction of requestInfo?.providersInteractions">
+          <span>{{ interaction?.providerName }}</span>
+          <span>{{ interaction?.price }}</span>
+          <span>{{ status(interaction.interactionStatus) }}</span>
+          <button (click)="onAcceptProvider(interaction?.providerId)">Accept</button>
+        </div>
+      </div>
+      <div class="row">
+        <button (click)="onClose()">Back</button>
+        <button (click)="onCancel()">Decline</button>
+      </div>
+    </div>
+  </div>
+</div>

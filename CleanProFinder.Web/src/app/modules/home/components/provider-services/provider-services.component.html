@@ -1,0 +1,26 @@
+<div class="all-services">
+  <div class="provided-services">
+    <h1>My services</h1>
+    <div class="provided-service" *ngFor="let service of myServices">
+      <span>
+        {{ service.name }}
+      </span>
+      <input class="price-input" type="number" [(ngModel)]="service.price" />
+    </div>
+    <button class="save-changes" (click)="saveServices()">Save</button>
+  </div>
+  <div class="add-services">
+    <h1>Add services</h1>
+    <div class="service-badges">
+      <div *ngFor="let service of services">
+        <button
+          class="service-badge"
+          [ngClass]="{ provided: isProvided(service.id) }"
+          (click)="toggleService(service.id)"
+          >
+          {{ service.name }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

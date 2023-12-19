@@ -1,0 +1,13 @@
+<div class="request-list">
+  <div class="request" *ngFor="let request of requests">
+    <h3 class="address">{{ request.address }}</h3>
+    <span>{{ request.square }} m²</span>
+    <span>Status: {{ status(request.status) }}</span>
+    <div class="services">
+      <span class="service" *ngFor="let service of request.services">
+        {{ service.name }}
+      </span>
+    </div>
+    <button (click)="onEditRequest(request.id)">Edit</button>
+  </div>
+</div>

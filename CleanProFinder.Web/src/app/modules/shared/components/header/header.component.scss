@@ -1,0 +1,35 @@
+.header {
+}
+.link-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  > button {
+  }
+}
+
+.profile-button {
+  :first-child {
+    margin-right: 1em;
+  }
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.25em;
+  padding: 0.5em 1em;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.nav-link-active {
+  background-color: transparent;
+  color: var(--primary);
+  border: none;
+}
+
+.nav-link {
+  background-color: transparent;
+  color: var(--black);
+  border: none;
+}

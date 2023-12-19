@@ -1,0 +1,54 @@
+<div class="request-component">
+  <h1>Request Description</h1>
+
+  <div class="col">
+    <div class="row">
+      <div class="col control">
+        <label for="">Address</label>
+        <label for="">{{ premise?.address ?? '' }}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col control">
+        <label>Description</label>
+        <label>{{ premise?.description }}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 col-sm-12 control">
+        <label> Area (in m2)</label>
+        <label>{{ premise?.square }}</label>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="requestForm">
+    <label>Request description</label>
+    <input
+      type="text"
+      formControlName="notes"
+      placeholder="Enter any special requests" />
+
+    <div class="cleaning-services">
+      <h3>Cleaning Services</h3>
+      <ul>
+        <li *ngFor="let service of cleaningServices">
+          <input
+            type="checkbox"
+            (change)="onServiceSelect(service.id)"
+            value="{{ service.id }}" />
+          {{ service.name }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="select-provider">
+      <button type="button" (click)="onSelectProvider()">Select Provider</button>
+    </div>
+
+    <div class="buttons">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit" (click)="onSubmit()">Place Request</button>
+    </div>
+  </form>
+</div>

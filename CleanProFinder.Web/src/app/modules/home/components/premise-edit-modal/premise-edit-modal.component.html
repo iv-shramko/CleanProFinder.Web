@@ -1,0 +1,45 @@
+<form [formGroup]="premiseCreateForm" class="container">
+  <div class="row">
+    <!-- <div class="col-4">
+      <app-file-upload></app-file-upload>
+    </div> -->
+    <div class="col">
+      <div class="row">
+        <div class="col control">
+          <label for="">Address</label><input formControlName="address" type="text" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col control">
+          <label>Description</label>
+          <textarea
+            formControlName="description"
+            name=""
+            id=""
+            cols="30"
+            rows="10"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 col-sm-12 control">
+          <label> Area (in m2)</label>
+          <input formControlName="square" type="text" name="" id="" />
+        </div>
+        <!-- <div class="col-3 col-sm-12 control">
+          <label for="">Rooms</label>
+          <input type="number" name="" id="" />
+        </div>
+        <div class="col-6 col-sm-12 control">
+          <label for="">Pets (leave empty if there are no pets)</label>
+          <input type="number" name="" id="" />
+        </div> -->
+      </div>
+      <div class="row mt-4">
+        <div class="col button-group">
+          <button class="go-bach-button" (click)="onClose()">Go back</button>
+          <button class="save-button" (click)="onSave()">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

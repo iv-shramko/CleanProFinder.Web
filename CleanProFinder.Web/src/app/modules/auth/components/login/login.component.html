@@ -1,0 +1,41 @@
+<div class="login-page">
+  <form class="login-form" [formGroup]="form" (submit)="handleFormSubmit()">
+    <div class="heading">
+      <h1 class="heading-title">
+        <a href="/">
+          <img src="../../../../../assets/icons/go-back.svg" alt="<-" />
+        </a>
+        <span>Log in account</span>
+      </h1>
+      <span class="heading-hint">Enter your account using login and password</span>
+    </div>
+    <fieldset class="credentials">
+      <div class="text-input">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" [formControlName]="fields.email" />
+      </div>
+      <div class="text-input">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          [formControlName]="fields.password" />
+      </div>
+    </fieldset>
+    <div class="actions">
+      <div class="remember-me">
+        <input type="checkbox" id="remember" checked />
+        <label for="remember">Remember me</label>
+      </div>
+      <button type="submit" class="login-button" [disabled]="!form.valid">
+        Log In
+      </button>
+      <div class="signup-hint">
+        <span>Don't have an account?</span>
+        <a href="/auth/signup" class="signup-link">Sign Up</a>
+      </div>
+    </div>
+  </form>
+  <card-design></card-design>
+</div>

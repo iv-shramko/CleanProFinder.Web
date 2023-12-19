@@ -1,0 +1,66 @@
+<div class="signup-page">
+  <form class="signup-form" [formGroup]="form" (submit)="handleFormSubmit()">
+    <h1 class="heading">Create an account</h1>
+    <fieldset class="credentials">
+      <div class="text-input">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" [formControlName]="fields.email" />
+      </div>
+      <div class="text-input">
+        <label for="password">Password (at least 8 characters)</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          [formControlName]="fields.password" />
+      </div>
+      <div class="text-input">
+        <label for="repeat-password">Repeat password</label>
+        <input
+          type="password"
+          name="repeatPassword"
+          id="repeat-password"
+          [formControlName]="fields.repeatPassword" />
+      </div>
+      <div class="role-selector">
+        <div class="role-option">
+          <input
+            type="radio"
+            name="role"
+            value="customer"
+            id="customer-selection"
+            [formControlName]="fields.role" />
+          <label for="customer-selection">As a customer</label>
+        </div>
+        <div class="role-option">
+          <input
+            type="radio"
+            name="role"
+            value="company"
+            id="company-selection"
+            [formControlName]="fields.role" />
+          <label for="company-selection">As a cleaning company</label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="actions">
+      <div class="signup-action">
+        <span></span>
+        <div class="agree">
+          <input type="checkbox" id="agree" />
+          <label for="agree">
+            <span>I agree with </span>
+            <a href="/auth/signup">Terms & Policies</a>
+          </label>
+        </div>
+        <a href="/" class="go-back">Go back</a>
+        <button type="submit" class="signup-button" [disabled]="!form.valid">Sign up</button>
+      </div>
+      <div class="login-hint">
+        <span>Already have an account?</span>
+        <a href="/auth/login" class="login-link">Log in</a>
+      </div>
+    </div>
+  </form>
+  <card-design></card-design>
+</div>
