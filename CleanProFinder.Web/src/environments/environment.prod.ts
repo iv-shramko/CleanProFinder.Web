@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://cpfapiqa.azurewebsites.net',
+  apiUrl: 'https://cpfapiremotedev.azurewebsites.net/api',
 };
