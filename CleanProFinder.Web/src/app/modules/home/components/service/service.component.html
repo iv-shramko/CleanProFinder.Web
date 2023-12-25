@@ -2,19 +2,32 @@
   <img class="base-card-image" src="https://picsum.photos/345/250" />
   <div class="base-card-body">
     <div class="row mt-2">
-      <div class="col-7">
-        {{ service?.name }}
-      </div>
-      <!-- <div class="col-5">
-        <app-rating [value]="service"></app-rating>
-      </div> -->
+      <p><strong>Name:</strong></p>
+      <p>{{ service?.name }}</p>
+    </div>
+    <div class="row">
+      <p><strong>Description: </strong></p>
+      <p>{{ service?.description }}</p>
     </div>
     <div class="row my-3">
-      <p>{{ service?.description }}</p>
+      <div class="col">
+        <hr />
+      </div>
     </div>
   </div>
   <div class="base-card-footer">
-    <img class="like-icon" src="../../../../../assets/icons/like.svg" alt="like" />
+    <button class="like-btn" [disabled]="this.isSaved" (click)="onSaveProvider()">
+      <img
+        *ngIf="!isSaved"
+        class="like-icon"
+        src="../../../../../assets/icons/like.svg"
+        alt="like" />
+      <img
+        *ngIf="isSaved"
+        class="like-icon"
+        src="../../../../../assets/icons/like-fill.svg"
+        alt="like" />
+    </button>
     <button class="see-more-button">
       <span>See more</span>
       <img src="../../../../../assets/icons/arrow-narrow-right.svg" />

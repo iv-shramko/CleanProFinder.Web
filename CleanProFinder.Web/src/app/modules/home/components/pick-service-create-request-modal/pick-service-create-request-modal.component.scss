@@ -1,0 +1,32 @@
+.submit-button {
+  border: none;
+  height: 3rem;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+  font-family: 'GeneralSans-Semibold';
+}
+
+.go-back {
+  text-decoration: none;
+  color: #000000;
+  height: 3rem;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #000000;
+  background-color: #ffffff;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+  padding-top: 6px;
+  width: 100%;
+}
+.buttons {
+  padding: 2em 0;
+  display: flex;
+  column-gap: 2em;
+}
+
+.container {
+  background-color: var(--primary-light);
+}

@@ -14,11 +14,11 @@ export class SavedProvidersApiService {
   constructor(private http: HttpClient) {}
 
   save(id: string): Observable<SaveProviderModel> {
-    return this.http.post<SaveProviderModel>(`${this.baseUrl}/save/${id}`, {});
+    return this.http.get<SaveProviderModel>(`${this.baseUrl}/save/${id}`);
   }
 
   delete(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
+    return this.http.get<void>(`${this.baseUrl}/delete/${id}`);
   }
 
   getSavedProviders(): Observable<SaveProviderModel[]> {

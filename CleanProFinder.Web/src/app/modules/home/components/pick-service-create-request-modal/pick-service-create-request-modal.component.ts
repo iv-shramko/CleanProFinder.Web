@@ -22,7 +22,7 @@ export class PickServiceCreateRequestModalComponent implements OnInit {
   ngOnInit(): void {
     this.profileService.getServiceProviderList().subscribe((providers) => {
       console.log(providers);
-      this.providers = providers;
+      this.providers = providers.filter((p) => this.isActive(p));
     });
   }
 
@@ -40,5 +40,9 @@ export class PickServiceCreateRequestModalComponent implements OnInit {
 
   cancel() {
     this.NgbActiveModal.close([]);
+  }
+
+  isActive(model: ServiceProviderFullModel) {
+    return !!model.description && !!model.name;
   }
 }

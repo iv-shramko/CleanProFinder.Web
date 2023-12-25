@@ -1,50 +1,76 @@
-<div class="container">
+<div class="container p-5">
+  <div class="row my-3">
+    <div class="col">
+      <h2>My request:</h2>
+    </div>
+  </div>
   <div class="row">
     <div class="col">
+      <div class="row my-3">
+        <div class="col">
+          <h4>Premise info:</h4>
+        </div>
+      </div>
       <div class="row">
-        <div class="col control">
-          <label for="">Address</label>
+        <div class="col">
+          <label class="me-2" for=""><strong>Address: </strong></label>
           <label for="">{{ premise?.address ?? '' }}</label>
         </div>
       </div>
       <div class="row">
         <div class="col control">
-          <label>Description</label>
+          <label class="me-2"><strong>Description: </strong></label>
           <label>{{ premise?.description }}</label>
         </div>
       </div>
       <div class="row">
         <div class="col-3 col-sm-12 control">
-          <label> Area (in m2)</label>
+          <label class="me-2"><strong> Area (in m2): </strong></label>
           <label>{{ premise?.square }}</label>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="row">
-        <p>Description:</p>
-        <p>{{ requestInfo?.description }}</p>
+      <div class="row my-3">
+        <div class="col">
+          <h4>Request details:</h4>
+        </div>
       </div>
-      <div class="row">
-        <p>Services:</p>
+      <div class="row my-2">
+        <div class="col">
+          <span class="me-2"><strong>Description:</strong></span>
+          <span>{{ requestInfo?.description ?? 'no description' }}</span>
+        </div>
+      </div>
+      <div class="row my-2">
+        <span><strong>Services:</strong></span>
         <div class="services">
           <span class="service" *ngFor="let service of requestInfo?.services">
             {{ service?.name }}
           </span>
         </div>
       </div>
-      <div class="row">
-        <p>Provider:</p>
-        <div class="" *ngFor="let interaction of requestInfo?.providersInteractions">
+      <div class="row my-2">
+        <p><strong>Provider responses:</strong></p>
+        <div
+          class="d-flex justify-content-between align-items-center"
+          *ngFor="let interaction of requestInfo?.providersInteractions">
           <span>{{ interaction?.providerName }}</span>
-          <span>{{ interaction?.price }}</span>
-          <span>{{ status(interaction.interactionStatus) }}</span>
-          <button (click)="onAcceptProvider(interaction?.providerId)">Accept</button>
+          <span class="mx-2">{{ interaction?.price }} uan</span>
+          <span [ngClass]="getStatusColor(interaction.interactionStatus)!">{{
+            status(interaction.interactionStatus)
+          }}</span>
+          <button
+            class="ms-2 accept-button"
+            [disabled]="interaction.interactionStatus !== 0"
+            (click)="onAcceptProvider(interaction?.providerId)">
+            Accept
+          </button>
         </div>
       </div>
-      <div class="row">
-        <button (click)="onClose()">Back</button>
-        <button (click)="onCancel()">Decline</button>
+      <div class="row mt-5">
+        <button class="go-back mb-1" (click)="onClose()">Back</button>
+        <button class="btn btn-danger" (click)="onCancel()">Decline</button>
       </div>
     </div>
   </div>
