@@ -1,0 +1,135 @@
+dialog {
+  font-family: 'Chillax-Semibold';
+  background-color: var(--primary-dark);
+  color: var(--white);
+  border: 1px solid var(--primary-light);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.price-prompt {
+  font-size: 1.5rem;
+}
+
+.price-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-direction: column;
+
+  input {
+    border: 1px solid var(--primary-light);
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
+    font-family: 'Chillax-Semibold';
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  button {
+    border: none;
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
+    font-family: 'Chillax-Semibold';
+  }
+
+  button.cancel {
+    background-color: var(--primary-light);
+    color: var(--primary);
+  }
+
+  button.respond {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+}
+
+.request-list {
+  margin-top: 2rem;
+  color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.request {
+  background-color: var(--primary);
+  padding: 1rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  font-family: 'Chillax-Semibold';
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  font-family: 'GeneralSans-Semibold';
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+}
+
+.status-0 {
+  background-color: #ce65ea;
+}
+
+.status-1 {
+  background-color: #f6c944;
+}
+
+.status-2 {
+  background-color: #8b38ec;
+}
+
+.status-3 {
+  background-color: #7b6c5c;
+}
+
+.status-4 {
+  background-color: #e25967;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.service {
+  padding: 0.3rem 0.7rem;
+  border-radius: 16px;
+  border: 2.5px solid var(--primary);
+  color: var(--primary);
+  font-family: 'GeneralSans-Semibold';
+  background-color: var(--primary-light);
+}
+
+.assign {
+  color: var(--white);
+  background-color: var(--primary-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  border: none;
+  font-family: 'GeneralSans-Semibold';
+}

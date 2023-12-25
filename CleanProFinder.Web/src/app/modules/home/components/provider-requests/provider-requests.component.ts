@@ -1,7 +1,10 @@
 import { RequestApiService } from 'src/app/modules/core/api/request-api-service.service';
 import { Component, OnInit } from '@angular/core';
 import { ActiveRequestModel } from 'src/app/modules/core/api/models/active-request.model';
-import { RequestStatus } from 'src/app/modules/shared/enums/request-status';
+import {
+  requestStatus,
+  RequestStatus,
+} from 'src/app/modules/shared/enums/request-status';
 import { AssignRequestModel } from 'src/app/modules/core/api/models/assign-request.model';
 
 @Component({
@@ -10,7 +13,7 @@ import { AssignRequestModel } from 'src/app/modules/core/api/models/assign-reque
   styleUrls: ['./provider-requests.component.scss'],
 })
 export class ProviderRequestsComponent implements OnInit {
-  constructor(private RequestApiService: RequestApiService) {}
+  constructor(private RequestApiService: RequestApiService) { }
 
   requests: ActiveRequestModel[] = [];
   isPriceEdit = false;
@@ -23,8 +26,8 @@ export class ProviderRequestsComponent implements OnInit {
     );
   }
 
-  status(value: number) {
-    return RequestStatus[value];
+  status(code: number): RequestStatus {
+    return requestStatus(code);
   }
 
   onRequestAssign(requestId: string) {

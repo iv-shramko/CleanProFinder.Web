@@ -1,19 +1,27 @@
 <dialog style="position: absolute" [open]="isPriceEdit">
-  <p>Enter price:</p>
-  <input [(ngModel)]="requestPrice" type="number" />
-  <button (click)="isPriceEdit = false">cancel</button>
-  <button (click)="onRespondToRequest()">Respond</button>
+  <h2 class="price-prompt">Enter price:</h2>
+  <div class="price-inputs">
+    <input [(ngModel)]="requestPrice" type="number" />
+    <div class="buttons">
+      <button class="cancel" (click)="isPriceEdit = false">cancel</button>
+      <button class="respond" (click)="onRespondToRequest()">Respond</button>
+    </div>
+  </div>
 </dialog>
 <div class="request-list">
   <div class="request" *ngFor="let request of requests">
-    <h3 class="address">{{ request.address }}</h3>
-    <span>{{ request.square }} m²</span>
-    <span>Status: {{ status(request.status) }}</span>
+    <div class="head">
+      <h3 class="address">{{ request.address }}</h3>
+      <span class="status status-{{ request.status }}">{{
+        status(request.status)
+      }}</span>
+    </div>
+    <span class="area">{{ request.square }} m²</span>
     <div class="services">
       <span class="service" *ngFor="let service of request.services">
         {{ service.name }}
       </span>
     </div>
-    <button (click)="onRequestAssign(request.id)">Assign</button>
+    <button class="assign" (click)="onRequestAssign(request.id)">Assign</button>
   </div>
 </div>
