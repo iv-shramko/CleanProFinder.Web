@@ -3,10 +3,7 @@ import { MyRequestModel } from 'src/app/modules/core/api/models/my-request.model
 import { RequestApiService } from './../../../core/api/request-api-service.service';
 import { Component, OnInit } from '@angular/core';
 import { RequestEditModalComponent } from 'src/app/modules/home/components/request-edit-modal/request-edit-modal.component';
-import {
-  requestStatus,
-  RequestStatus,
-} from 'src/app/modules/shared/enums/request-status';
+import { RequestStatus } from 'src/app/modules/shared/enums/request-status';
 
 @Component({
   selector: 'app-my-requests',
@@ -17,15 +14,15 @@ export class MyRequestsComponent implements OnInit {
   constructor(
     private RequestApiService: RequestApiService,
     private NgbModal: NgbModal
-  ) { }
+  ) {}
   requests: MyRequestModel[] = [];
 
   ngOnInit(): void {
     this.RequestApiService.getAllMyRequests().subscribe((res) => (this.requests = res));
   }
 
-  status(code: number): RequestStatus {
-    return requestStatus(code);
+  status(code: number): string {
+    return RequestStatus[code];
   }
 
   onEditRequest(requestId: string) {
@@ -38,8 +35,8 @@ export class MyRequestsComponent implements OnInit {
   }
 
   getStatusColor(code: number) {
-    const status = requestStatus(code);
-    switch (status) {
+    //const status = requestStatus(code);
+    switch (code) {
       case RequestStatus.Sent:
         return 'text-primary';
       case RequestStatus.Placed:

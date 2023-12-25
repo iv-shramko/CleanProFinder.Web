@@ -3,7 +3,11 @@
     <div class="col-6">
       <div class="row">
         <div class="col title-bar">
-          <img routerLink="/" src="../../../../../assets/icons/go-back.svg" alt="<-" />
+          <img
+            routerLink="/"
+            (click)="logout()"
+            src="../../../../../assets/icons/go-back.svg"
+            alt="<-" />
           <h1>{{ pageText.title }}</h1>
         </div>
       </div>
