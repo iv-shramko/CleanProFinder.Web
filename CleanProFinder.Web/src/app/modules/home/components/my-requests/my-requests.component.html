@@ -2,7 +2,7 @@
   <div class="request" *ngFor="let request of requests">
     <h3 class="address">{{ request.address }}</h3>
     <span>{{ request.square }} m²</span>
-    <span [ngClass]="getStatusColor(request.status)"
+    <span [ngClass]="getStatusColor(request.status)!"
       >Status: {{ status(request.status) }}</span
     >
     <div class="services">

@@ -2,6 +2,8 @@ export enum RequestStatus {
   Placed,
   Sent,
   HasAnswers,
-  Concluded,
   Canceled,
+  Concluded,
+  Started,
+  finished,
 }

@@ -62,7 +62,7 @@
           }}</span>
           <button
             class="ms-2 accept-button"
-            [disabled]="interaction.interactionStatus !== 0"
+            [disabled]="interaction.interactionStatus !== 0 || requestInfo.status !== 2"
             (click)="onAcceptProvider(interaction?.providerId)">
             Accept
           </button>

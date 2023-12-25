@@ -43,6 +43,6 @@ export class PickServiceCreateRequestModalComponent implements OnInit {
   }
 
   isActive(model: ServiceProviderFullModel) {
-    return !!model.description && !!model.name;
+    return !!model.name;
   }
 }

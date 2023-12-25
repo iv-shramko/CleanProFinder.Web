@@ -18,9 +18,10 @@ export class ProviderRequestsComponent implements OnInit {
   requestForAssign: string = '';
 
   ngOnInit(): void {
-    this.RequestApiService.getActiveRequests().subscribe(
-      (res) => (this.requests = res)
-    );
+    this.RequestApiService.getActiveRequests().subscribe((res) => {
+      this.requests = res;
+      console.log(this.requests);
+    });
   }
 
   status(value: number) {

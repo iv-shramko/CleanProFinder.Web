@@ -88,6 +88,8 @@ export class MyRequestsComponent implements OnInit {
         return 'text-success';
       case RequestStatus.HasAnswers:
         return 'text-warning';
+      default:
+        return 'text-primary';
     }
   }
 }
