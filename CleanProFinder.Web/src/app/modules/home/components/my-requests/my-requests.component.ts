@@ -35,7 +35,6 @@ export class MyRequestsComponent implements OnInit {
   }
 
   getStatusColor(code: number) {
-    //const status = requestStatus(code);
     switch (code) {
       case RequestStatus.Sent:
         return 'text-primary';

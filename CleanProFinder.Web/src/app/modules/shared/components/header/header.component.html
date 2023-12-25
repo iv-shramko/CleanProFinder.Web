@@ -1,6 +1,6 @@
-<div class="header" [ngSwitch]="role">
+<header [ngSwitch]="role">
   <ng-container *ngSwitchCase="'service-user'">
-    <div class="row p-3">
+    <div class="row p-3 nav">
       <div class="col-7 link-container">
         <button
           class="nav-link"
@@ -27,7 +27,7 @@
           Saved providers
         </button>
       </div>
-      <div class="col-5">
+      <div class="col-5 header-actions">
         <button class="profile-button">
           <img src="../../../../../assets/icons/user.svg" />
           <span>Ivan</span>
@@ -38,8 +38,8 @@
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="'service-provider'">
-    <div class="row p-3">
-      <div class="col-7 link-container">
+    <div class="row p-3 nav">
+      <div class="col-7 link-container" style="width: 100%;">
         <button
           class="nav-link"
           routerLink="my-services"
@@ -52,7 +52,7 @@
           routerLinkActive="nav-link-active">
           Active requests
         </button>
-        <div class="col-5">
+        <div class="col-5 header-actions">
           <button class="profile-button">
             <img src="../../../../../assets/icons/user.svg" />
             <span>Ivan</span>
@@ -63,4 +63,4 @@
       </div>
     </div>
   </ng-container>
-</div>
+</header>
