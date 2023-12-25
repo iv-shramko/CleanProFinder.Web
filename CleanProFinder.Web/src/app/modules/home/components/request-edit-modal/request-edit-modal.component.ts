@@ -65,4 +65,17 @@ export class RequestEditModalComponent implements OnInit {
       this.NgbActiveModal.close();
     });
   }
+
+  getStatusColor(status: RequestInteractionStatus) {
+    switch (status) {
+      case RequestInteractionStatus.Accepted:
+        return 'text-success';
+      case RequestInteractionStatus.Declined:
+        return 'text-danger';
+      case RequestInteractionStatus.Accepted:
+        return 'text-primary';
+      default:
+        return 'text-primary';
+    }
+  }
 }

@@ -44,16 +44,14 @@ export class AuthApiService {
   createUser(model: CreateUserModel): void {
     this.httpClient.post<any>(this.uris.createUser, model).subscribe((res) => {
       localStorage.setItem('authToken', res.bearer);
-      //window.location.assign('/auth/customer');
-      this.router.navigate(['auth', 'customer']);
+      this.router.navigateByUrl('/auth/customer');
     });
   }
 
   createProvider(model: CreateProviderModel): void {
     this.httpClient.post<any>(this.uris.createProvider, model).subscribe((res) => {
       localStorage.setItem('authToken', res.bearer);
-      //window.location.assign('/auth/service-provider');
-      this.router.navigate(['auth', 'service-provider']);
+      this.router.navigateByUrl('/auth/service-provider');
     });
   }
 

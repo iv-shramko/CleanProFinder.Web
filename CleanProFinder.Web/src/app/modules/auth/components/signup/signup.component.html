@@ -50,17 +50,17 @@
           <input type="checkbox" id="agree" />
           <label for="agree">
             <span>I agree with </span>
-            <a href="/auth/signup">Terms & Policies</a>
+            <a routerLink="/auth/signup">Terms & Policies</a>
           </label>
         </div>
-        <a routerLink="../" class="go-back">Go back</a>
+        <a routerLink="/" class="go-back">Go back</a>
         <button type="submit" class="signup-button" [disabled]="!form.valid">
           Sign up
         </button>
       </div>
       <div class="login-hint">
         <span>Already have an account?</span>
-        <a routerLink="./login" class="login-link">Log in</a>
+        <a routerLink="/auth/login" class="login-link">Log in</a>
       </div>
     </div>
   </form>

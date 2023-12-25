@@ -1,54 +1,89 @@
-<div class="request-component">
-  <h1>Request Description</h1>
-
-  <div class="col">
-    <div class="row">
-      <div class="col control">
-        <label for="">Address</label>
-        <label for="">{{ premise?.address ?? '' }}</label>
-      </div>
+<div class="request-component p-5">
+  <div class="row">
+    <div class="col">
+      <h2>Create Request</h2>
     </div>
-    <div class="row">
-      <div class="col control">
-        <label>Description</label>
-        <label>{{ premise?.description }}</label>
-      </div>
+  </div>
+  <div class="row" my-3>
+    <div class="col">
+      <hr />
     </div>
-    <div class="row">
-      <div class="col-3 col-sm-12 control">
-        <label> Area (in m2)</label>
-        <label>{{ premise?.square }}</label>
+  </div>
+  <div class="row my-4">
+    <div class="col">
+      <h4>Premise info:</h4>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col control">
+          <label class="me-2"><strong>Address:</strong> </label>
+          <label for="">{{ premise?.address ?? '' }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col control">
+          <label class="me-2"><strong>Description:</strong> </label>
+          <label>{{ premise?.description }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 col-sm-12 control">
+          <label class="me-2"><strong>Area (in m2): </strong> </label>
+          <label>{{ premise?.square }}</label>
+        </div>
       </div>
     </div>
   </div>
-
-  <form [formGroup]="requestForm">
-    <label>Request description</label>
-    <input
-      type="text"
-      formControlName="notes"
-      placeholder="Enter any special requests" />
-
-    <div class="cleaning-services">
-      <h3>Cleaning Services</h3>
-      <ul>
-        <li *ngFor="let service of cleaningServices">
-          <input
-            type="checkbox"
-            (change)="onServiceSelect(service.id)"
-            value="{{ service.id }}" />
-          {{ service.name }}
-        </li>
-      </ul>
+  <div class="row">
+    <div class="col">
+      <hr />
     </div>
+  </div>
 
-    <div class="select-provider">
-      <button type="button" (click)="onSelectProvider()">Select Provider</button>
-    </div>
+  <div class="row my-3">
+    <div class="col">
+      <form [formGroup]="requestForm">
+        <div class="row">
+          <div class="col">
+            <h4>Enter request description:</h4>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="notes"
+              placeholder="Enter additional info..." />
+          </div>
+        </div>
 
-    <div class="buttons">
-      <button type="button" (click)="onCancel()">Cancel</button>
-      <button type="submit" (click)="onSubmit()">Place Request</button>
+        <div class="cleaning-services">
+          <h4>Select services to order:</h4>
+          <ul>
+            <li *ngFor="let service of cleaningServices">
+              <input
+                type="checkbox"
+                (change)="onServiceSelect(service.id)"
+                value="{{ service.id }}" />
+              {{ service.name }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="select-provider d-flex justify-content-center">
+          <button
+            class="select-provider-btn"
+            type="button"
+            (click)="onSelectProvider()">
+            Select Provider
+          </button>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="go-back" (click)="onCancel()">Cancel</button>
+          <button type="submit" class="place-button" (click)="onSubmit()">
+            Place Request
+          </button>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>

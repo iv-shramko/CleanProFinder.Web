@@ -4,6 +4,14 @@
   flex-shrink: 1;
 }
 
+.modal-rounded {
+  border-radius: 5%;
+}
+
+p {
+  margin: 0;
+}
+
 .base-card {
   background-color: var(--primary);
   border-radius: 8px;
@@ -44,5 +52,6 @@
 
 .base-card-footer {
   display: flex;
-  justify-content: space-between;
+  column-gap: 2em;
+  justify-content: center;
 }

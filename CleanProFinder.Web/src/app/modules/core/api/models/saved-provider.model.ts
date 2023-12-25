@@ -1,6 +1,6 @@
 // save-provider.model.ts
 export interface SaveProviderModel {
-  cleaningServiceProviderId: string;
+  id: string;
   name: string;
   subscribedAt: string;
 }

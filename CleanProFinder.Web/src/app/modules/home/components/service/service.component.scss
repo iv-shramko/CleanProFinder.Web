@@ -3,6 +3,14 @@
   max-width: 374px;
   flex-shrink: 1;
 }
+p {
+  margin: 0;
+}
+
+.like-btn {
+  background-color: transparent;
+  border: none;
+}
 
 .base-card {
   background-color: var(--primary);

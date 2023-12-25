@@ -1,21 +1,46 @@
-<!-- request-service-provider.component.html -->
-<div>
-  <h2>{{ provider.name }}</h2>
-  <p>{{ provider.description }}</p>
-  <hr />
-  <!-- <div
-    *ngFor="let service of provider.services"
-    class="service"
-    (mouseover)="showPrice(service.cleaningServiceId)"
-    (mouseout)="hidePrice()"
-    > -->
-  <div *ngFor="let service of provider.services" class="service">
-    <!-- <p *ngIf="service.cleaningServiceId !== hovered">{{ service.name }}</p> -->
-    <p>{{ service.name }}</p>
-    <p>Price: {{ service.price }}</p>
+<div class="container">
+  <div class="row bg-light-primary">
+    <div class="col">
+      <h3>
+        <strong>{{ provider.name }}</strong>
+      </h3>
+      <p>
+        <strong>{{ provider.description }}</strong>
+      </p>
+    </div>
+    <div class="col d-flex align-items-center justify-content-end">
+      <button class="py-3 px-5 select-btn" (click)="toggleSelect()">
+        <span *ngIf="!isSelected">Select</span> <span *ngIf="isSelected">unselect</span>
+      </button>
+    </div>
+  </div>
+  <div class="row py-3 bg-dark-primary" style="border-radius: 8px">
+    <div class="col d-flex align-items-center">
+      <p class="me-2">Services:</p>
+      <button
+        [ngClass]="isShowServices ? 'select-btn' : 'show-services-btn'"
+        (click)="isShowServices = !isShowServices">
+        <span *ngIf="isShowServices">Hide</span>
+        <span *ngIf="!isShowServices">Show</span>
+      </button>
+    </div>
+  </div>
+  <div
+    *ngIf="isShowServices"
+    class="row bg-dark-primary p-3 mt-1"
+    style="border-radius: 8px">
+    <div class="col service-badges">
+      <span class="service-badge" *ngFor="let service of provider.services">
+        <span>
+          <strong>{{ service.name }} : </strong>
+        </span>
+        <span>{{ service.price }} uan</span>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr />
+    </div>
   </div>
 </div>
-<hr />
-<button (click)="toggleSelect()">
-  <span *ngIf="!isSelected">Select</span> <span *ngIf="isSelected">unselect</span>
-</button>

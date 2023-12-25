@@ -1,9 +1,10 @@
 <form [formGroup]="premiseCreateForm" class="container">
   <div class="row">
-    <!-- <div class="col-4">
-      <app-file-upload></app-file-upload>
-    </div> -->
     <div class="col">
+      <div class="row mb-3">
+        <h4>Edit your premise</h4>
+        <hr class="my-3" />
+      </div>
       <div class="row">
         <div class="col control">
           <label for="">Address</label><input formControlName="address" type="text" />
@@ -12,12 +13,7 @@
       <div class="row">
         <div class="col control">
           <label>Description</label>
-          <textarea
-            formControlName="description"
-            name=""
-            id=""
-            cols="30"
-            rows="10"></textarea>
+          <input formControlName="description" />
         </div>
       </div>
       <div class="row">
@@ -25,14 +21,6 @@
           <label> Area (in m2)</label>
           <input formControlName="square" type="text" name="" id="" />
         </div>
-        <!-- <div class="col-3 col-sm-12 control">
-          <label for="">Rooms</label>
-          <input type="number" name="" id="" />
-        </div>
-        <div class="col-6 col-sm-12 control">
-          <label for="">Pets (leave empty if there are no pets)</label>
-          <input type="number" name="" id="" />
-        </div> -->
       </div>
       <div class="row mt-4">
         <div class="col button-group">
