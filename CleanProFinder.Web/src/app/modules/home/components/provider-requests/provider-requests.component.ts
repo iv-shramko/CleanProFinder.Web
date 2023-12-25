@@ -10,7 +10,7 @@ import { AssignRequestModel } from 'src/app/modules/core/api/models/assign-reque
   styleUrls: ['./provider-requests.component.scss'],
 })
 export class ProviderRequestsComponent implements OnInit {
-  constructor(private RequestApiService: RequestApiService) {}
+  constructor(private RequestApiService: RequestApiService) { }
 
   requests: ActiveRequestModel[] = [];
   isPriceEdit = false;
@@ -25,7 +25,11 @@ export class ProviderRequestsComponent implements OnInit {
   }
 
   status(code: number): string {
-    return RequestStatus[code];
+    return this.PascalCaseToSentenceCase(RequestStatus[code]);
+  }
+
+  PascalCaseToSentenceCase(str: string): string {
+    return str.replace(/(?<=.)([A-Z])/g, (_, s) => ' ' + s.toLowerCase()).trim();
   }
 
   onRequestAssign(requestId: string) {
