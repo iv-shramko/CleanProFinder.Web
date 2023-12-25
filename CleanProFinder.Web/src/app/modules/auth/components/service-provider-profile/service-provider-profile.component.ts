@@ -61,6 +61,11 @@ export class ServiceProviderProfileComponent {
       site: this.profileForm.controls[this.formFields.website].value,
     };
   }
+
+  logout() {
+    localStorage.removeItem('authToken');
+    this.router.navigateByUrl('unauthorized');
+  }
 }
 
 export const SERVICE_PROVIDER_PROFILE_FORM_FIELDS = {

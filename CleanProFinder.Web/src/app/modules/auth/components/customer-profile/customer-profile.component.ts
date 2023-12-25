@@ -58,6 +58,11 @@ export class CustomerProfileComponent {
       phoneNumber: this.profileForm.controls[this.formFields.phoneNumber].value,
     };
   }
+
+  logout() {
+    localStorage.removeItem('authToken');
+    this.router.navigateByUrl('unauthorized');
+  }
 }
 
 export const CUSTOMER_PROFILE_FORM_FIELDS = {
