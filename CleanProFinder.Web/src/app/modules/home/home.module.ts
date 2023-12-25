@@ -18,6 +18,7 @@ import { PickServiceCreateRequestModalComponent } from './components/pick-servic
 import { ProviderRequestCreateComponent } from './components/provider-request-create/provider-request-create.component';
 import { RequestEditModalComponent } from './components/request-edit-modal/request-edit-modal.component';
 import { ProviderRequestsComponent } from './components/provider-requests/provider-requests.component';
+import { SavedProvidersComponent } from './components/saved-providers/saved-providers.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProviderRequestsComponent } from './components/provider-requests/provid
     ProviderRequestCreateComponent,
     RequestEditModalComponent,
     ProviderRequestsComponent,
+    SavedProvidersComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="row mb-5">
+        <div class="col">
+          <h2>My saved providers</h2>
+        </div>
+      </div>
+      <div class="row" *ngIf="savedProviders.length == 0">
+        <div class="col">
+          <h5>You do not have any saved providers</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col service-badges">
+          <div class="service-badge" *ngFor="let provider of savedProviders">
+            <span>{{ provider.name }}</span>
+            <button class="btn btn-danger ms-2" (click)="onRemoveFromList(provider.id)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

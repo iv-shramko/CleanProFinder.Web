@@ -75,4 +75,19 @@ export class MyRequestsComponent implements OnInit {
 
     modal.componentInstance.requestId = requestId;
   }
+
+  getStatusColor(status: RequestStatus) {
+    switch (status) {
+      case RequestStatus.Sent:
+        return 'text-primary';
+      case RequestStatus.Placed:
+        return 'text-primary';
+      case RequestStatus.Canceled:
+        return 'text-danger';
+      case RequestStatus.Concluded:
+        return 'text-success';
+      case RequestStatus.HasAnswers:
+        return 'text-warning';
+    }
+  }
 }

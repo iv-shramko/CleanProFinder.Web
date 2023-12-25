@@ -17,6 +17,7 @@ export class ProviderRequestCreateComponent implements OnInit {
   @Input() provider!: ServiceProviderFullModel;
 
   isSelected: boolean = false;
+  isShowServices: boolean = false;
 
   hovered: string = '';
 

@@ -41,6 +41,7 @@ export class PremiseComponent implements OnInit {
     var modal = this.ngbModal.open(RequestModalComponent, {
       size: 'xl',
       centered: true,
+      windowClass: 'modal-rounded',
     });
     modal.componentInstance.premiseId = this.premise.id;
   }

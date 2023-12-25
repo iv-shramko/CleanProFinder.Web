@@ -8,6 +8,7 @@ import { ServicesComponent } from 'src/app/modules/home/components/services/serv
 import { ServiceProviderGuard } from '../core/guards/service-provider.guard';
 import { ProviderServicesComponent } from './components/provider-services/provider-services.component';
 import { MyRequestsComponent } from './components/my-requests/my-requests.component';
+import { SavedProvidersComponent } from 'src/app/modules/home/components/saved-providers/saved-providers.component';
 
 const uri = {
   SERVICES: 'services',
@@ -17,6 +18,7 @@ const uri = {
   PROVIDER_SERVICES: 'my-services',
   MY_REQUESTS: 'my-requests',
   ACTIVE_REQUESTS: 'active-requests',
+  SAVED_PROVIDERS: 'saved-providers',
 };
 
 const routes: Routes = [
@@ -48,6 +50,11 @@ const routes: Routes = [
         path: uri.ACTIVE_REQUESTS,
         component: ProviderRequestsComponent,
         canActivate: [ServiceProviderGuard],
+      },
+      {
+        path: uri.SAVED_PROVIDERS,
+        component: SavedProvidersComponent,
+        canActivate: [CustomerGuard],
       },
     ],
   },

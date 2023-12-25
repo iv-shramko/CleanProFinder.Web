@@ -1,0 +1,16 @@
+.service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.service-badge {
+  padding: 5px;
+  border: 2.5px solid var(--primary);
+  border-radius: 16px;
+  color: var(--primary);
+  font-family: 'GeneralSans-Semibold';
+  background-color: var(--primary-light);
+}

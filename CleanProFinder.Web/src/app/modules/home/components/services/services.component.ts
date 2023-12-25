@@ -1,4 +1,4 @@
-import { ServiceProviderFullModel } from 'src/app/modules/core/api/models/service-provide-request-create.model';
+import { ServiceProviderFullModel } from './../../../core/api/models/service-provide-request-create.model';
 import { ProfilesApiService } from './../../../core/api/profiles-api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,7 +13,10 @@ export class ServicesComponent implements OnInit {
   serviceProviders: ServiceProviderFullModel[] = [];
   ngOnInit(): void {
     this.ProfilesApiService.getServiceProviderList().subscribe(
-      (list) => (this.serviceProviders = list)
+      (list) => (this.serviceProviders = list.filter((s) => this.isActive(s)))
     );
+  }
+  isActive(model: ServiceProviderFullModel) {
+    return !!model.description && !!model.name;
   }
 }

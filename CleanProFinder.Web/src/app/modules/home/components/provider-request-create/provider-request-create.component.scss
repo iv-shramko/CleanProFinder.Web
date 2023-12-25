@@ -1,0 +1,46 @@
+p {
+  margin: 0;
+}
+.bg-light-primary {
+  background-color: var(--primary-light);
+}
+
+.bg-dark-primary {
+  background-color: var(--primary);
+}
+
+.select-btn {
+  border-radius: 8px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+}
+.show-services-btn {
+  text-decoration: none;
+  color: #000000;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #000000;
+  background-color: #ffffff;
+  font-family: 'GeneralSans-Semibold';
+  text-align: center;
+}
+
+.service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1rem;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.service-badge {
+  padding: 5px;
+  border: 2.5px solid var(--primary);
+  border-radius: 16px;
+  color: var(--primary);
+  font-family: 'GeneralSans-Semibold';
+  background-color: var(--primary-light);
+}
